@@ -36,7 +36,7 @@
     /* Header */
     header{
       position:sticky;top:0;z-index:50;
-      background: rgba(255,255,255,.86);
+      background: rgba(255,255,255,.90);
       backdrop-filter: blur(10px);
       border-bottom:1px solid var(--line);
     }
@@ -70,20 +70,22 @@
       background:#fff;
       box-shadow: var(--shadow2);
       font-weight:700;font-size:13px;
+      transition: transform .15s ease, box-shadow .15s ease;
     }
     .btn.primary{
       border-color: rgba(14,165,233,.35);
       background: linear-gradient(135deg, rgba(14,165,233,.10), rgba(236,72,153,.08));
     }
-    .btn:hover{transform: translateY(-1px)}
+    .btn:hover{transform: translateY(-1px); box-shadow: 0 14px 26px rgba(15,23,42,.10)}
     .ig{
       width:40px;height:40px;border-radius:14px;
       display:grid;place-items:center;
       border:1px solid var(--line);
       background:#fff;
       box-shadow: var(--shadow2);
+      transition: transform .15s ease;
     }
-
+    .ig:hover{transform: translateY(-1px)}
     .burger{display:none}
     .panel{
       display:none;
@@ -96,23 +98,19 @@
     .panel a:hover{background:#f3f6ff}
     .show{display:block}
 
-    /* Hero / Slider */
-    .hero{padding:22px 0 12px}
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:16px;
-      align-items:stretch;
-    }
+    /* HERO FULL WIDTH */
+    .hero{padding:18px 0 8px}
+    .heroGrid{display:grid;grid-template-columns: 1fr;gap:16px}
 
     .slider{
-      border-radius: calc(var(--radius) + 6px);
+      width:100%;
+      border-radius: calc(var(--radius) + 8px);
       border:1px solid var(--line);
       background:#fff;
       box-shadow: var(--shadow);
       overflow:hidden;
       position:relative;
-      min-height: 380px;
+      min-height: 420px;
     }
     .slides{
       display:flex;width:300%;
@@ -121,12 +119,17 @@
     }
     .slide{
       width:100%;
-      padding:26px 22px;
+      padding:30px 26px;
       display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
       align-items:center;
+      background:
+        radial-gradient(900px 260px at 10% 0%, rgba(14,165,233,.14), transparent 60%),
+        radial-gradient(900px 260px at 85% 10%, rgba(236,72,153,.12), transparent 60%),
+        #fff;
     }
+
     .kicker{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
     .chip{
       font-size:12px;
@@ -135,9 +138,9 @@
       color:#1f2a44;
       font-weight:600;
     }
-    .hTitle{margin:0;font-size:34px;letter-spacing:-.03em}
-    .hText{margin:10px 0 0;color:var(--muted);line-height:1.65;max-width:58ch}
-    .hActions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    .hTitle{margin:0;font-size:40px;letter-spacing:-.03em;line-height:1.08}
+    .hText{margin:12px 0 0;color:var(--muted);line-height:1.7;max-width:70ch}
+    .hActions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
 
     .art{
       border-radius: 18px;
@@ -151,7 +154,7 @@
     .dots{
       position:absolute;left:16px;bottom:14px;
       display:flex;gap:8px;
-      background: rgba(255,255,255,.92);
+      background: rgba(255,255,255,.95);
       border:1px solid var(--line);
       padding:8px 10px;border-radius:999px;
       box-shadow: var(--shadow2);
@@ -163,8 +166,12 @@
     }
     .dot.active{background: linear-gradient(135deg, var(--brand), var(--brand2)); border-color: transparent}
 
-    /* Right Cards */
-    .sideStack{display:grid;gap:14px}
+    /* INFO CARDS BELOW HERO */
+    .sideStack{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
     .card{
       background:#fff;
       border:1px solid var(--line);
@@ -208,7 +215,7 @@
     }
     .svc p{margin:8px 0 0;color:var(--muted);line-height:1.6;font-size:13px}
 
-    /* Categories */
+    /* Lists split */
     .splitL{grid-column: span 5}
     .splitR{grid-column: span 7}
     .list{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px}
@@ -277,17 +284,18 @@
     @media (max-width: 980px){
       .links{display:none}
       .burger{display:inline-flex}
-      .heroGrid{grid-template-columns:1fr}
       .slide{grid-template-columns:1fr}
+      .sideStack{grid-template-columns:1fr}
       .svc{grid-column: span 6}
       .splitL,.splitR{grid-column: span 12}
       .shot{grid-column: span 12}
       .contact{grid-template-columns:1fr}
-      .hTitle{font-size:30px}
+      .hTitle{font-size:32px}
     }
     @media (max-width: 520px){
       .svc{grid-column: span 12}
       .floatWrap{right:10px}
+      .slider{min-height: 460px}
     }
   </style>
 </head>
@@ -364,7 +372,7 @@
     </div>
   </header>
 
-  <!-- HERO / SLIDER -->
+  <!-- HERO -->
   <main id="inicio" class="hero">
     <div class="container">
       <div class="heroGrid">
@@ -381,10 +389,13 @@
                   <span class="chip">Parque Lefevre • PB-19</span>
                 </div>
                 <h2 class="hTitle">Impresión y uniformes con acabado premium</h2>
-                <p class="hText">Serigrafía, bordados y DTF/sublimación para empresas, escuelas, restaurantes, clínicas y eventos. Te asesoramos desde el diseño.</p>
+                <p class="hText">
+                  Serigrafía, bordados y DTF/sublimación para empresas, escuelas, restaurantes, clínicas y eventos.
+                  Te asesoramos desde el diseño.
+                </p>
                 <div class="hActions">
                   <a class="btn primary" href="#servicios">Ver servicios</a>
-                  <a class="btn" href="#contacto">Contacto</a>
+                  <a class="btn" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar%20serigraf%C3%ADa%20o%20bordado%20por%20favor." target="_blank" rel="noopener">Cotizar</a>
                 </div>
               </div>
 
@@ -414,7 +425,9 @@
                   <span class="chip">Trofeos</span>
                 </div>
                 <h2 class="hTitle">Láser, señalización y regalos corporativos</h2>
-                <p class="hText">Corte y grabado en acrílico/madera: placas, letreros, reconocimientos, tags, llaveros y detalles con tu marca.</p>
+                <p class="hText">
+                  Corte y grabado en acrílico/madera: placas, letreros, reconocimientos, tags, llaveros y detalles con tu marca.
+                </p>
                 <div class="hActions">
                   <a class="btn primary" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar%20grabado%20l%C3%A1ser%20por%20favor." target="_blank" rel="noopener">Cotizar láser</a>
                   <a class="btn" href="#trabajos">Ver ejemplos</a>
@@ -441,7 +454,9 @@
                   <span class="chip">Eventos</span>
                 </div>
                 <h2 class="hTitle">Detalles florales y decoración para momentos especiales</h2>
-                <p class="hText">Ramos, box florales, globos y desayunos sorpresa. Ideal para cumpleaños, aniversarios y ocasiones importantes.</p>
+                <p class="hText">
+                  Ramos, box florales, globos y sorpresas. Ideal para cumpleaños, aniversarios y ocasiones importantes.
+                </p>
                 <div class="hActions">
                   <a class="btn primary" href="#arreglos">Ver arreglos</a>
                   <a class="btn" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar%20un%20arreglo%20floral.%20Fecha%3A%20%20%7C%20Presupuesto%3A%20" target="_blank" rel="noopener">Cotizar</a>
