@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gift&more | Serigrafía • Bordados • Láser • Promocionales</title>
-  <meta name="description" content="Gift&more: serigrafía, bordados, DTF/sublimación, láser y artículos promocionales. Parque Lefevre, Local PB-19, Panamá." />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Gift&more | Bordados • Serigrafía • Láser • Promocionales</title>
+  <meta name="description" content="Gift&more: bordados, serigrafía, láser y promocionales. Parque Lefevre, Av. Ernesto T. Lefevre, Plaza Royal Park, Local PB-19.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,31 +12,52 @@
 
   <style>
     :root{
-      --bg:#f7f8fb;
-      --white:#ffffff;
+      --bg:#f6f7fb;
+      --card:#ffffff;
       --text:#0f172a;
       --muted:#5b6475;
       --line:#e6e9f2;
+      --brand:#1d4ed8;
+      --brand2:#0ea5e9;
+      --accent:#f59e0b;
 
-      --brand:#0ea5e9;     /* azul */
-      --brand2:#ec4899;    /* rosado */
-      --accent:#f59e0b;    /* ámbar */
-
-      --shadow: 0 18px 45px rgba(15, 23, 42, .10);
-      --shadow2: 0 10px 22px rgba(15, 23, 42, .08);
-      --radius: 18px;
-      --max: 1180px;
+      --shadow:0 14px 40px rgba(15,23,42,.10);
+      --shadow2:0 10px 22px rgba(15,23,42,.08);
+      --r:18px;
+      --max:1180px;
     }
 
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg);}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg)}
     a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
     .container{max-width:var(--max);margin:0 auto;padding:0 18px}
+
+    /* Top bar (mini) */
+    .topbar{
+      background:#0b1220;
+      color:#dbe4ff;
+      font-size:12px;
+    }
+    .topbar .inner{
+      display:flex;gap:12px;flex-wrap:wrap;
+      align-items:center;justify-content:space-between;
+      padding:8px 0;
+    }
+    .topbar a{color:#dbe4ff}
+    .topbar .left{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .topbar .right{display:flex;gap:10px;align-items:center}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:6px 10px;border-radius:999px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.10);
+    }
 
     /* Header */
     header{
       position:sticky;top:0;z-index:50;
-      background: rgba(255,255,255,.90);
+      background:rgba(255,255,255,.92);
       backdrop-filter: blur(10px);
       border-bottom:1px solid var(--line);
     }
@@ -44,48 +65,47 @@
       display:flex;align-items:center;justify-content:space-between;gap:14px;
       padding:14px 0;
     }
-    .brand{display:flex;align-items:center;gap:12px;min-width:250px}
+    .brand{
+      display:flex;align-items:center;gap:12px;
+      min-width:260px;
+    }
     .logo{
-      width:44px;height:44px;border-radius:14px;
-      background: linear-gradient(135deg, rgba(14,165,233,1), rgba(236,72,153,1));
-      display:grid;place-items:center;
-      box-shadow: 0 14px 28px rgba(14,165,233,.18);
+      width:46px;height:46px;border-radius:16px;
+      background:linear-gradient(135deg,var(--brand2),#ec4899);
+      box-shadow:0 14px 28px rgba(14,165,233,.18);
+      display:grid;place-items:center;color:#fff;font-weight:900;
     }
     .brand h1{margin:0;font-size:16px;line-height:1.1}
     .brand small{display:block;margin-top:3px;color:var(--muted);font-size:12px}
 
-    .links{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
-    .links a{
-      font-size:13px;color:#111827;
+    nav .links{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+    nav .links a{
+      font-size:13px;
       padding:10px 12px;border-radius:12px;
       border:1px solid transparent;
+      color:#111827;
     }
-    .links a:hover{background:#f3f6ff;border-color:var(--line)}
-
-    .right{display:flex;align-items:center;gap:10px}
+    nav .links a:hover{background:#eef2ff;border-color:var(--line)}
+    .actions{display:flex;gap:10px;align-items:center}
     .btn{
       display:inline-flex;align-items:center;gap:10px;
       padding:11px 14px;border-radius:14px;
       border:1px solid var(--line);
       background:#fff;
-      box-shadow: var(--shadow2);
-      font-weight:700;font-size:13px;
-      transition: transform .15s ease, box-shadow .15s ease;
+      box-shadow:var(--shadow2);
+      font-weight:800;font-size:13px;
+      transition:transform .15s ease, box-shadow .15s ease;
     }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 14px 26px rgba(15,23,42,.10)}
     .btn.primary{
-      border-color: rgba(14,165,233,.35);
-      background: linear-gradient(135deg, rgba(14,165,233,.10), rgba(236,72,153,.08));
+      border-color:rgba(29,78,216,.25);
+      background:linear-gradient(135deg, rgba(29,78,216,.10), rgba(14,165,233,.08));
     }
-    .btn:hover{transform: translateY(-1px); box-shadow: 0 14px 26px rgba(15,23,42,.10)}
     .ig{
-      width:40px;height:40px;border-radius:14px;
+      width:42px;height:42px;border-radius:14px;
       display:grid;place-items:center;
-      border:1px solid var(--line);
-      background:#fff;
-      box-shadow: var(--shadow2);
-      transition: transform .15s ease;
+      border:1px solid var(--line);background:#fff;box-shadow:var(--shadow2);
     }
-    .ig:hover{transform: translateY(-1px)}
     .burger{display:none}
     .panel{
       display:none;
@@ -95,245 +115,271 @@
     .panel a{
       display:block;padding:10px 12px;border-radius:12px;color:#111827;
     }
-    .panel a:hover{background:#f3f6ff}
+    .panel a:hover{background:#eef2ff}
     .show{display:block}
 
-    /* HERO FULL WIDTH */
-    .hero{padding:18px 0 8px}
-    .heroGrid{display:grid;grid-template-columns: 1fr;gap:16px}
-
+    /* Hero Slider */
+    .hero{padding:18px 0 10px}
     .slider{
-      width:100%;
-      border-radius: calc(var(--radius) + 8px);
       border:1px solid var(--line);
       background:#fff;
-      box-shadow: var(--shadow);
+      border-radius:calc(var(--r) + 10px);
       overflow:hidden;
+      box-shadow:var(--shadow);
       position:relative;
-      min-height: 420px;
     }
     .slides{
       display:flex;width:300%;
-      transform: translateX(0%);
-      transition: transform .55s ease;
+      transform:translateX(0%);
+      transition:transform .55s ease;
     }
     .slide{
       width:100%;
-      padding:30px 26px;
+      min-height:420px;
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:18px;
-      align-items:center;
+      grid-template-columns: 1.05fr .95fr;
+      align-items:stretch;
+    }
+    .copy{
+      padding:34px 28px;
       background:
-        radial-gradient(900px 260px at 10% 0%, rgba(14,165,233,.14), transparent 60%),
-        radial-gradient(900px 260px at 85% 10%, rgba(236,72,153,.12), transparent 60%),
+        radial-gradient(1100px 380px at 0% 0%, rgba(29,78,216,.12), transparent 55%),
+        radial-gradient(900px 300px at 80% 10%, rgba(14,165,233,.10), transparent 55%),
         #fff;
     }
-
     .kicker{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
     .chip{
       font-size:12px;
       padding:8px 10px;border-radius:999px;
-      background:#f3f6ff;border:1px solid var(--line);
-      color:#1f2a44;
-      font-weight:600;
+      background:#eef2ff;border:1px solid #dfe6ff;
+      color:#1f2a44;font-weight:700;
     }
-    .hTitle{margin:0;font-size:40px;letter-spacing:-.03em;line-height:1.08}
-    .hText{margin:12px 0 0;color:var(--muted);line-height:1.7;max-width:70ch}
-    .hActions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+    .title{margin:0;font-size:42px;letter-spacing:-.03em;line-height:1.08}
+    .desc{margin:12px 0 0;color:var(--muted);line-height:1.7;max-width:70ch}
+    .ctaRow{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+    .miniNote{margin-top:14px;color:#334155;font-size:12px}
+    .miniNote b{color:#0f172a}
 
-    .art{
-      border-radius: 18px;
-      border:1px solid var(--line);
-      background: linear-gradient(135deg, #f7fbff, #fff);
-      box-shadow: var(--shadow2);
-      overflow:hidden;
+    .heroImg{
+      position:relative;
+      background:#111827;
+      min-height:420px;
     }
-    .art svg{display:block;width:100%;height:auto}
+    .heroImg::after{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,.25) 38%, rgba(255,255,255,0) 62%);
+      opacity:.90;
+      pointer-events:none;
+    }
+    .heroImg .bg{
+      position:absolute;inset:0;
+      background-size:cover;
+      background-position:center;
+      filter:saturate(1.05) contrast(1.02);
+    }
 
     .dots{
       position:absolute;left:16px;bottom:14px;
       display:flex;gap:8px;
-      background: rgba(255,255,255,.95);
+      background:rgba(255,255,255,.95);
       border:1px solid var(--line);
       padding:8px 10px;border-radius:999px;
-      box-shadow: var(--shadow2);
+      box-shadow:var(--shadow2);
+      z-index:2;
     }
     .dot{
       width:10px;height:10px;border-radius:99px;
       background:#cfd6e6;border:1px solid #cfd6e6;
       cursor:pointer;
     }
-    .dot.active{background: linear-gradient(135deg, var(--brand), var(--brand2)); border-color: transparent}
+    .dot.active{background:linear-gradient(135deg,var(--brand),var(--brand2));border-color:transparent}
 
-    /* INFO CARDS BELOW HERO */
-    .sideStack{
+    /* Category icons row (like example) */
+    .cats{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(10, 1fr);
+      gap:12px;
+      margin:18px 0 0;
+    }
+    .cat{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:12px 10px;
+      text-align:center;
+      box-shadow:var(--shadow2);
+    }
+    .cat .ico{
+      width:44px;height:44px;border-radius:16px;
+      margin:0 auto 10px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(29,78,216,.10), rgba(14,165,233,.08));
+      border:1px solid rgba(29,78,216,.18);
+      font-size:20px;
+    }
+    .cat small{display:block;color:#334155;font-weight:800;font-size:11px}
+
+    /* Sections */
+    section{padding:46px 0}
+    .head{
+      display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+      align-items:flex-end;
+    }
+    .head h2{margin:0;font-size:28px;letter-spacing:-.02em}
+    .head p{margin:6px 0 0;color:var(--muted);max-width:78ch;line-height:1.65}
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
       gap:14px;
     }
     .card{
-      background:#fff;
+      background:var(--card);
       border:1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius:var(--r);
       padding:16px;
-      box-shadow: var(--shadow2);
-    }
-    .card b{display:block}
-    .card p{margin:8px 0 0;color:var(--muted);line-height:1.6}
-    .miniRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .badge{
-      font-size:12px;
-      padding:7px 9px;border-radius:12px;
-      border:1px solid var(--line);
-      background:#fafbff;
-      color:#24304b;
-      font-weight:600;
-    }
-
-    /* Sections */
-    section{padding:44px 0}
-    .head{
-      display:flex;align-items:flex-end;justify-content:space-between;gap:14px;
-      flex-wrap:wrap;
-    }
-    .head h2{margin:0;font-size:26px;letter-spacing:-.02em}
-    .head p{margin:0;color:var(--muted);max-width:72ch;line-height:1.65}
-
-    .grid12{
-      margin-top:18px;
-      display:grid;grid-template-columns: repeat(12, 1fr);
-      gap:14px;
+      box-shadow:var(--shadow2);
     }
     .svc{grid-column: span 4}
-    .svc .icon{
-      width:44px;height:44px;border-radius:14px;
-      display:grid;place-items:center;
-      background: linear-gradient(135deg, rgba(14,165,233,.12), rgba(236,72,153,.10));
-      border:1px solid rgba(14,165,233,.18);
-      margin-bottom:12px;
-    }
+    .svc b{display:block}
     .svc p{margin:8px 0 0;color:var(--muted);line-height:1.6;font-size:13px}
+    .svc .icon{
+      width:46px;height:46px;border-radius:16px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(29,78,216,.10), rgba(14,165,233,.08));
+      border:1px solid rgba(29,78,216,.18);
+      margin-bottom:12px;
+      font-size:20px;
+    }
 
-    /* Lists split */
-    .splitL{grid-column: span 5}
-    .splitR{grid-column: span 7}
-    .list{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+    /* Gallery boxes (placeholders for your future images) */
+    .work{grid-column: span 4; padding:0; overflow:hidden}
+    .ph{
+      height:220px;
+      background:
+        linear-gradient(135deg, rgba(29,78,216,.10), rgba(14,165,233,.08)),
+        repeating-linear-gradient(135deg, rgba(255,255,255,.55) 0 10px, rgba(255,255,255,.70) 10px 20px);
+      border-bottom:1px solid var(--line);
+      display:grid;place-items:center;
+      color:#1f2a44;
+      font-weight:900;
+      letter-spacing:.02em;
+    }
+    .work .cap{padding:12px 14px}
+    .work .cap small{color:var(--muted);display:block;margin-top:4px}
+
+    /* Contact */
+    .contact{grid-template-columns: 7fr 5fr}
+    .mapBox{grid-column: span 7}
+    .infoBox{grid-column: span 5}
+    .list{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:10px}
     .list li{
       display:flex;gap:10px;align-items:flex-start;
       border:1px solid var(--line);
       background:#fff;border-radius:16px;
       padding:12px;
-      box-shadow: var(--shadow2);
+      box-shadow:var(--shadow2);
     }
     .check{
       width:22px;height:22px;border-radius:8px;
-      background: rgba(14,165,233,.14);
+      background:rgba(14,165,233,.14);
       border:1px solid rgba(14,165,233,.25);
       display:grid;place-items:center;
       flex:0 0 22px;
       margin-top:1px;
+      font-weight:900;
     }
-
-    /* Gallery */
-    .gallery{grid-column: span 12; display:grid;grid-template-columns: repeat(12,1fr);gap:14px;margin-top:14px}
-    .shot{grid-column: span 4; border-radius:18px; overflow:hidden; border:1px solid var(--line); background:#fff; box-shadow: var(--shadow2)}
-    .shot svg{display:block;width:100%;height:auto}
-    .shot .cap{padding:12px 14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
-
-    /* Contact */
-    .contact{display:grid;grid-template-columns: 1fr 1fr;gap:14px;margin-top:18px}
 
     /* Footer */
     footer{
-      background:#fff;
-      border-top:1px solid var(--line);
-      padding:24px 0 38px;
-      margin-top:10px;
+      background:#0b1220;
+      color:#dbe4ff;
+      padding:28px 0 36px;
+      margin-top:8px;
     }
-    .foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--muted)}
-    .foot strong{color:var(--text)}
+    .foot{
+      display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+      color:#cfe0ff;
+      font-size:13px;
+    }
+    .foot strong{color:#fff}
 
-    /* Floating buttons */
+    /* Floating */
     .floatWrap{
-      position:fixed; right:14px; top:50%;
-      transform: translateY(-50%);
+      position:fixed; right:14px; bottom:16px;
       display:flex; flex-direction:column; gap:10px;
       z-index:80;
     }
     .floatBtn{
-      width:52px;height:52px;border-radius:18px;
+      width:54px;height:54px;border-radius:18px;
       display:grid;place-items:center;
       border:1px solid var(--line);
       background:#fff;
-      box-shadow: var(--shadow2);
+      box-shadow:var(--shadow2);
       position:relative;
     }
     .floatBtn span{
-      position:absolute;right:62px;white-space:nowrap;
+      position:absolute;right:64px;white-space:nowrap;
       background:#111827;color:#fff;
       padding:8px 10px;border-radius:12px;
-      font-size:12px;opacity:0;transform: translateX(6px);
+      font-size:12px;opacity:0;transform:translateX(6px);
       transition:.2s ease;pointer-events:none;
     }
-    .floatBtn:hover span{opacity:1;transform: translateX(0)}
+    .floatBtn:hover span{opacity:1;transform:translateX(0)}
     .floatBtn.wh{border-color: rgba(37,211,102,.35)}
     .floatBtn.wz{border-color: rgba(14,165,233,.35)}
 
-    /* Responsive */
+    @media (max-width: 1100px){
+      .cats{grid-template-columns: repeat(5, 1fr)}
+    }
     @media (max-width: 980px){
-      .links{display:none}
+      nav .links{display:none}
       .burger{display:inline-flex}
       .slide{grid-template-columns:1fr}
-      .sideStack{grid-template-columns:1fr}
+      .heroImg{min-height:260px}
+      .heroImg::after{background:linear-gradient(180deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.35) 35%, rgba(255,255,255,0) 65%)}
+      .title{font-size:34px}
       .svc{grid-column: span 6}
-      .splitL,.splitR{grid-column: span 12}
-      .shot{grid-column: span 12}
-      .contact{grid-template-columns:1fr}
-      .hTitle{font-size:32px}
+      .work{grid-column: span 6}
+      .contact{grid-template-columns: repeat(12,1fr)}
+      .mapBox{grid-column: span 12}
+      .infoBox{grid-column: span 12}
     }
     @media (max-width: 520px){
+      .cats{grid-template-columns: repeat(2, 1fr)}
       .svc{grid-column: span 12}
-      .floatWrap{right:10px}
-      .slider{min-height: 460px}
+      .work{grid-column: span 12}
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Floating buttons -->
-  <div class="floatWrap">
-    <a class="floatBtn wh" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar%20por%20favor." target="_blank" rel="noopener">
-      <span>WhatsApp</span>
-      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <path d="M16 3C9.1 3 3.6 8.3 3.6 14.9c0 2.6 1 5 2.7 6.9L5 29l7.5-1.9c1.1.3 2.3.5 3.5.5 6.9 0 12.4-5.3 12.4-11.9C28.4 8.3 22.9 3 16 3z" fill="#25D366" opacity=".18"/>
-        <path d="M22.6 18.8c-.3.8-1.5 1.5-2.1 1.6-.6.1-1.4.2-2.3-.1-1.1-.3-2.5-.9-3.8-2.1-1.6-1.5-2.7-3.4-3-4.2-.3-.8 0-1.8.4-2.4.3-.5.7-.6 1-.6h.7c.2 0 .5-.1.7.6.3.8.9 2.4 1 2.6.1.2.1.5 0 .7-.1.2-.2.4-.4.6-.2.2-.4.4-.6.6-.2.2-.4.4-.2.8.3.7 1.1 1.9 2.4 2.8 1.6 1.2 2 1 2.4.6.3-.3.7-.8.9-1 .2-.2.4-.2.7-.1.3.1 2.1 1 2.4 1.2.3.2.6.3.7.5.1.2.1.9-.2 1.7z" fill="#0f172a"/>
-      </svg>
-    </a>
-
-    <a class="floatBtn wz" href="https://waze.com/ul?q=Parque%20Lefevre%20PB-19%20Panam%C3%A1&navigate=yes" target="_blank" rel="noopener">
-      <span>Waze</span>
-      <svg width="24" height="24" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <path d="M18 30c0-8 6-14 14-14h0c8 0 14 6 14 14v4c0 9-7 16-16 16h-3c-5 0-9-4-9-9V30z" fill="#0ea5e9" opacity=".18"/>
-        <path d="M26 33a3 3 0 1 0 0 .01V33zm14 0a3 3 0 1 0 0 .01V33z" fill="#0f172a" opacity=".8"/>
-        <path d="M29 43c1.5 1.2 4.5 1.2 6 0" stroke="#0f172a" stroke-width="3" stroke-linecap="round" opacity=".8"/>
-      </svg>
-    </a>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <div class="inner">
+        <div class="left">
+          <span class="pill">📍 Parque Lefevre • Plaza Royal Park • PB-19</span>
+          <a class="pill" href="mailto:ventas@giftandmore.pa">✉️ ventas@giftandmore.pa</a>
+        </div>
+        <div class="right">
+          <a class="pill" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar%20por%20favor." target="_blank" rel="noopener">💬 WhatsApp: +507 6364-7927</a>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <!-- HEADER -->
   <header>
     <div class="container">
       <div class="nav">
         <div class="brand">
-          <div class="logo" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M12 21s-7-4.4-7-10.2C5 7.2 7.6 5 10.4 5c1.2 0 2.3.5 3 1.3C14.1 5.5 15.2 5 16.4 5 19.2 5 21.8 7.2 22 10.8 22 16.6 12 21 12 21z" fill="white"/>
-            </svg>
-          </div>
+          <div class="logo" aria-hidden="true">Gm</div>
           <div>
             <h1>Gift&more</h1>
-            <small>Serigrafía • Bordados • Láser • Promocionales</small>
+            <small>Bordados • Serigrafía • Láser • Promocionales</small>
           </div>
         </div>
 
@@ -341,14 +387,14 @@
           <div class="links">
             <a href="#inicio">Inicio</a>
             <a href="#servicios">Servicios</a>
-            <a href="#arreglos">Arreglos Florales</a>
-            <a href="#trabajos">Trabajos</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#productos">Productos</a>
+            <a href="#trabajos">Trabajos Realizados</a>
+            <a href="#contacto">Contáctenos</a>
           </div>
         </nav>
 
-        <div class="right">
-          <a class="btn primary" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar%20por%20favor." target="_blank" rel="noopener">Cotizar →</a>
+        <div class="actions">
+          <a class="btn primary" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar%20por%20favor." target="_blank" rel="noopener">Escríbenos</a>
 
           <a class="ig" href="https://www.instagram.com/gifts_andmore507?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" aria-label="Instagram">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -365,153 +411,143 @@
       <div class="panel" id="mobilePanel">
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
-        <a href="#arreglos">Arreglos Florales</a>
-        <a href="#trabajos">Trabajos</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#productos">Productos</a>
+        <a href="#trabajos">Trabajos Realizados</a>
+        <a href="#contacto">Contáctenos</a>
       </div>
     </div>
   </header>
 
+  <!-- FLOATING -->
+  <div class="floatWrap">
+    <a class="floatBtn wh" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar%20por%20favor." target="_blank" rel="noopener">
+      <span>WhatsApp</span>
+      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 3C9.1 3 3.6 8.3 3.6 14.9c0 2.6 1 5 2.7 6.9L5 29l7.5-1.9c1.1.3 2.3.5 3.5.5 6.9 0 12.4-5.3 12.4-11.9C28.4 8.3 22.9 3 16 3z" fill="#25D366" opacity=".18"/>
+        <path d="M22.6 18.8c-.3.8-1.5 1.5-2.1 1.6-.6.1-1.4.2-2.3-.1-1.1-.3-2.5-.9-3.8-2.1-1.6-1.5-2.7-3.4-3-4.2-.3-.8 0-1.8.4-2.4.3-.5.7-.6 1-.6h.7c.2 0 .5-.1.7.6.3.8.9 2.4 1 2.6.1.2.1.5 0 .7-.1.2-.2.4-.4.6-.2.2-.4.4-.6.6-.2.2-.4.4-.2.8.3.7 1.1 1.9 2.4 2.8 1.6 1.2 2 1 2.4.6.3-.3.7-.8.9-1 .2-.2.4-.2.7-.1.3.1 2.1 1 2.4 1.2.3.2.6.3.7.5.1.2.1.9-.2 1.7z" fill="#0f172a"/>
+      </svg>
+    </a>
+
+    <a class="floatBtn wz" href="https://waze.com/ul?q=PH%20Royal%20Park%20Parque%20Lefevre%20Panam%C3%A1&navigate=yes" target="_blank" rel="noopener">
+      <span>Waze (Royal Park)</span>
+      <svg width="24" height="24" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M18 30c0-8 6-14 14-14h0c8 0 14 6 14 14v4c0 9-7 16-16 16h-3c-5 0-9-4-9-9V30z" fill="#0ea5e9" opacity=".18"/>
+        <path d="M26 33a3 3 0 1 0 0 .01V33zm14 0a3 3 0 1 0 0 .01V33z" fill="#0f172a" opacity=".8"/>
+        <path d="M29 43c1.5 1.2 4.5 1.2 6 0" stroke="#0f172a" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+      </svg>
+    </a>
+  </div>
+
   <!-- HERO -->
   <main id="inicio" class="hero">
     <div class="container">
-      <div class="heroGrid">
 
-        <div class="slider">
-          <div class="slides" id="slides">
+      <div class="slider">
+        <div class="slides" id="slides">
 
-            <!-- Banner 1 -->
-            <div class="slide">
-              <div>
-                <div class="kicker">
-                  <span class="chip">Calidad empresarial</span>
-                  <span class="chip">Mayor y detal</span>
-                  <span class="chip">Parque Lefevre • PB-19</span>
-                </div>
-                <h2 class="hTitle">Impresión y uniformes con acabado premium</h2>
-                <p class="hText">
-                  Serigrafía, bordados y DTF/sublimación para empresas, escuelas, restaurantes, clínicas y eventos.
-                  Te asesoramos desde el diseño.
-                </p>
-                <div class="hActions">
-                  <a class="btn primary" href="#servicios">Ver servicios</a>
-                  <a class="btn" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar%20serigraf%C3%ADa%20o%20bordado%20por%20favor." target="_blank" rel="noopener">Cotizar</a>
-                </div>
+          <!-- SLIDE 1: SERIGRAFIA -->
+          <div class="slide">
+            <div class="copy">
+              <div class="kicker">
+                <span class="chip">Serigrafía</span>
+                <span class="chip">DTF / Sublimación</span>
+                <span class="chip">Mayor y detal</span>
               </div>
-
-              <div class="art" aria-hidden="true">
-                <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="gA" x1="0" x2="1">
-                      <stop offset="0" stop-color="#0ea5e9" stop-opacity=".75"/>
-                      <stop offset="1" stop-color="#ec4899" stop-opacity=".55"/>
-                    </linearGradient>
-                  </defs>
-                  <rect width="900" height="520" fill="#ffffff"/>
-                  <rect x="40" y="40" width="820" height="120" rx="26" fill="url(#gA)" opacity=".25"/>
-                  <rect x="40" y="190" width="390" height="290" rx="26" fill="#f3f6ff" stroke="#e6e9f2"/>
-                  <rect x="470" y="190" width="390" height="140" rx="26" fill="#fff4f8" stroke="#e6e9f2"/>
-                  <rect x="470" y="340" width="390" height="140" rx="26" fill="#fff7e6" stroke="#e6e9f2"/>
-                </svg>
+              <h2 class="title">Imprime tus uniformes y textiles con acabado profesional</h2>
+              <p class="desc">
+                Producción para empresas, escuelas, restaurantes y eventos.
+                Te cotizamos según cantidad, técnica y tiempo de entrega.
+              </p>
+              <div class="ctaRow">
+                <a class="btn primary" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar%20serigraf%C3%ADa%20o%20DTF.%20Cantidad%3A%20%20Tallas%3A%20%20Fecha%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+                <a class="btn" href="#servicios">Ver servicios</a>
+              </div>
+              <div class="miniNote">
+                <b>Ubicación:</b> Av. Ernesto T. Lefevre, Plaza Royal Park • <b>Local PB-19</b>
               </div>
             </div>
 
-            <!-- Banner 2 -->
-            <div class="slide">
-              <div>
-                <div class="kicker">
-                  <span class="chip">Grabado láser</span>
-                  <span class="chip">Placas • QR</span>
-                  <span class="chip">Trofeos</span>
-                </div>
-                <h2 class="hTitle">Láser, señalización y regalos corporativos</h2>
-                <p class="hText">
-                  Corte y grabado en acrílico/madera: placas, letreros, reconocimientos, tags, llaveros y detalles con tu marca.
-                </p>
-                <div class="hActions">
-                  <a class="btn primary" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar%20grabado%20l%C3%A1ser%20por%20favor." target="_blank" rel="noopener">Cotizar láser</a>
-                  <a class="btn" href="#trabajos">Ver ejemplos</a>
-                </div>
-              </div>
-
-              <div class="art" aria-hidden="true">
-                <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="900" height="520" fill="#ffffff"/>
-                  <circle cx="680" cy="170" r="140" fill="#f3f6ff"/>
-                  <circle cx="320" cy="350" r="170" fill="#fff4f8"/>
-                  <rect x="90" y="90" width="720" height="340" rx="30" fill="#ffffff" stroke="#e6e9f2"/>
-                  <path d="M220 360 L450 170 L680 360" stroke="#0ea5e9" stroke-width="18" stroke-linecap="round" fill="none" opacity=".55"/>
-                </svg>
-              </div>
+            <div class="heroImg" aria-hidden="true">
+              <div class="bg" style="background-image:url('banner-1-serigrafia.jpg');"></div>
             </div>
-
-            <!-- Banner 3 -->
-            <div class="slide">
-              <div>
-                <div class="kicker">
-                  <span class="chip">Arreglos florales</span>
-                  <span class="chip">Sorpresas</span>
-                  <span class="chip">Eventos</span>
-                </div>
-                <h2 class="hTitle">Detalles florales y decoración para momentos especiales</h2>
-                <p class="hText">
-                  Ramos, box florales, globos y sorpresas. Ideal para cumpleaños, aniversarios y ocasiones importantes.
-                </p>
-                <div class="hActions">
-                  <a class="btn primary" href="#arreglos">Ver arreglos</a>
-                  <a class="btn" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar%20un%20arreglo%20floral.%20Fecha%3A%20%20%7C%20Presupuesto%3A%20" target="_blank" rel="noopener">Cotizar</a>
-                </div>
-              </div>
-
-              <div class="art" aria-hidden="true">
-                <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="900" height="520" fill="#ffffff"/>
-                  <circle cx="280" cy="280" r="180" fill="#fff4f8"/>
-                  <circle cx="480" cy="300" r="150" fill="#f3f6ff"/>
-                  <circle cx="660" cy="260" r="170" fill="#fff7e6"/>
-                  <rect x="90" y="360" width="720" height="110" rx="26" fill="#ffffff" stroke="#e6e9f2"/>
-                </svg>
-              </div>
-            </div>
-
           </div>
 
-          <div class="dots">
-            <div class="dot active" data-i="0"></div>
-            <div class="dot" data-i="1"></div>
-            <div class="dot" data-i="2"></div>
+          <!-- SLIDE 2: LASER -->
+          <div class="slide">
+            <div class="copy">
+              <div class="kicker">
+                <span class="chip">Láser</span>
+                <span class="chip">Placas • QR</span>
+                <span class="chip">Reconocimientos</span>
+              </div>
+              <h2 class="title">Grabado láser y señalización para tu marca</h2>
+              <p class="desc">
+                Placas, letreros, tags, acrílico y madera. Ideal para negocios, oficinas y eventos corporativos.
+              </p>
+              <div class="ctaRow">
+                <a class="btn primary" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar%20grabado%20l%C3%A1ser.%20Producto%3A%20%20Cantidad%3A%20%20Fecha%3A%20" target="_blank" rel="noopener">Cotizar láser</a>
+                <a class="btn" href="#trabajos">Ver trabajos</a>
+              </div>
+              <div class="miniNote">
+                <b>Entrega:</b> coordinamos según urgencia y disponibilidad.
+              </div>
+            </div>
+
+            <div class="heroImg" aria-hidden="true">
+              <div class="bg" style="background-image:url('banner-2-laser.jpg');"></div>
+            </div>
           </div>
+
+          <!-- SLIDE 3: (tu banner 3 ya está subido) -->
+          <div class="slide">
+            <div class="copy">
+              <div class="kicker">
+                <span class="chip">Bordados</span>
+                <span class="chip">Gorras • Polos</span>
+                <span class="chip">Corporativo</span>
+              </div>
+              <h2 class="title">Bordados corporativos con detalle fino</h2>
+              <p class="desc">
+                Logos y nombres en gorras, camisas y uniformes.
+                Un acabado elegante que dura más.
+              </p>
+              <div class="ctaRow">
+                <a class="btn primary" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar%20bordados.%20Prenda%3A%20%20Cantidad%3A%20%20Tama%C3%B1o%20logo%3A%20%20Fecha%3A%20" target="_blank" rel="noopener">Cotizar bordado</a>
+                <a class="btn" href="#productos">Ver productos</a>
+              </div>
+              <div class="miniNote">
+                <b>Tip:</b> Envíanos tu logo (PNG o PDF) para cotizar más rápido.
+              </div>
+            </div>
+
+            <div class="heroImg" aria-hidden="true">
+              <div class="bg" style="background-image:url('banner-3-arreglos-florales.jpg');"></div>
+            </div>
+          </div>
+
         </div>
 
-        <div class="sideStack">
-          <div class="card">
-            <b>Atención rápida</b>
-            <p>Escríbenos por WhatsApp y te cotizamos según cantidad, técnica y tiempo de entrega.</p>
-            <div class="miniRow">
-              <span class="badge">Uniformes</span>
-              <span class="badge">Eventos</span>
-              <span class="badge">Empresas</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <b>Servicios más pedidos</b>
-            <div class="miniRow">
-              <span class="badge">Serigrafía</span>
-              <span class="badge">Bordados</span>
-              <span class="badge">DTF</span>
-              <span class="badge">Láser</span>
-            </div>
-            <p style="margin-top:10px">Parque Lefevre, Panamá • <strong>Local PB-19</strong></p>
-          </div>
-
-          <div class="card">
-            <b>¿Qué enviar para cotizar?</b>
-            <p>Foto/arte, tamaño, cantidad y fecha de entrega. Con eso te respondemos más rápido.</p>
-          </div>
+        <div class="dots">
+          <div class="dot active" data-i="0"></div>
+          <div class="dot" data-i="1"></div>
+          <div class="dot" data-i="2"></div>
         </div>
-
       </div>
+
+      <!-- Categories row -->
+      <div class="cats" aria-label="Categorías">
+        <div class="cat"><div class="ico">👕</div><small>POLOS</small></div>
+        <div class="cat"><div class="ico">👚</div><small>T-SHIRTS</small></div>
+        <div class="cat"><div class="ico">🧢</div><small>GORRAS</small></div>
+        <div class="cat"><div class="ico">👔</div><small>CAMISAS</small></div>
+        <div class="cat"><div class="ico">👜</div><small>BOLSAS</small></div>
+        <div class="cat"><div class="ico">🎁</div><small>PROMOS</small></div>
+        <div class="cat"><div class="ico">🏷️</div><small>STICKERS</small></div>
+        <div class="cat"><div class="ico">🪪</div><small>PLACAS</small></div>
+        <div class="cat"><div class="ico">🧵</div><small>BORDADOS</small></div>
+        <div class="cat"><div class="ico">🖨️</div><small>SERIGRAFÍA</small></div>
+      </div>
+
     </div>
   </main>
 
@@ -521,26 +557,26 @@
       <div class="head">
         <div>
           <h2>Servicios</h2>
-          <p>Soluciones completas para imagen corporativa, publicidad, eventos y regalos personalizados.</p>
+          <p>Soluciones completas para imagen corporativa, uniformes, publicidad y eventos.</p>
         </div>
-        <p>Mayor / Detal • Cotización por WhatsApp</p>
+        <a class="btn primary" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar.%20Servicio%3A%20%20Cantidad%3A%20%20Fecha%3A%20" target="_blank" rel="noopener">Cotizar →</a>
       </div>
 
-      <div class="grid12">
+      <div class="grid">
         <div class="card svc">
           <div class="icon">🖨️</div>
           <b>Serigrafía</b>
-          <p>Polos, camisas, bolsas, suéteres y uniformes. Excelente para volumen y durabilidad.</p>
-        </div>
-        <div class="card svc">
-          <div class="icon">🧵</div>
-          <b>Bordados</b>
-          <p>Logos y nombres en gorras, polos y uniformes. Acabado corporativo premium.</p>
+          <p>Polos, camisas, suéteres y uniformes. Excelente para volumen y durabilidad.</p>
         </div>
         <div class="card svc">
           <div class="icon">✨</div>
           <b>DTF / Sublimación</b>
           <p>Colores vivos y detalle fino en textiles y artículos. Ideal para diseños complejos.</p>
+        </div>
+        <div class="card svc">
+          <div class="icon">🧵</div>
+          <b>Bordados</b>
+          <p>Logos y nombres en gorras, polos y uniformes. Acabado corporativo premium.</p>
         </div>
 
         <div class="card svc">
@@ -562,76 +598,64 @@
     </div>
   </section>
 
-  <!-- ARREGLOS -->
-  <section id="arreglos">
+  <!-- PRODUCTOS (solo cuadros listos; tú subes imágenes luego) -->
+  <section id="productos">
     <div class="container">
       <div class="head">
         <div>
-          <h2>Arreglos florales</h2>
-          <p>Ramos, box florales, globos y sorpresas para cumpleaños, aniversarios y eventos.</p>
+          <h2>Productos</h2>
+          <p>Deja estos cuadros listos. Luego subes las fotos y solo cambiamos las imágenes.</p>
         </div>
-        <a class="btn primary" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20cotizar%20un%20arreglo%20floral.%20Fecha%3A%20%20%7C%20Presupuesto%3A%20%20%7C%20Colores%3A%20" target="_blank" rel="noopener">Cotizar arreglo →</a>
+        <p style="color:var(--muted);margin:0">Imágenes pendientes</p>
       </div>
 
-      <div class="grid12">
-        <div class="splitL">
-          <ul class="list">
-            <li><span class="check">✓</span><div><b>Fecha + horario</b><div style="color:var(--muted);font-size:12px;margin-top:4px">para asegurar disponibilidad</div></div></li>
-            <li><span class="check">✓</span><div><b>Presupuesto</b><div style="color:var(--muted);font-size:12px;margin-top:4px">te damos opciones bonitas en tu rango</div></div></li>
-            <li><span class="check">✓</span><div><b>Colores / temática</b><div style="color:var(--muted);font-size:12px;margin-top:4px">rosas, girasoles, elegante, pastel…</div></div></li>
-          </ul>
-        </div>
+      <div class="grid">
+        <div class="card svc"><div class="icon">👕</div><b>Uniformes</b><p>Escolares, empresariales, médicos y deportivos.</p></div>
+        <div class="card svc"><div class="icon">🧢</div><b>Gorras</b><p>Bordadas o impresas, ideal para promociones.</p></div>
+        <div class="card svc"><div class="icon">👜</div><b>Bolsas</b><p>Personalizadas para marca y eventos.</p></div>
 
-        <div class="splitR">
-          <ul class="list">
-            <li><span class="check">✓</span><div><b>Tarjeta personalizada</b><div style="color:var(--muted);font-size:12px;margin-top:4px">mensaje impreso y presentación bonita</div></div></li>
-            <li><span class="check">✓</span><div><b>Globos y decoración</b><div style="color:var(--muted);font-size:12px;margin-top:4px">bouquets, números, letras</div></div></li>
-            <li><span class="check">✓</span><div><b>Delivery coordinado</b><div style="color:var(--muted);font-size:12px;margin-top:4px">según ubicación y horario</div></div></li>
-          </ul>
-        </div>
+        <div class="card svc"><div class="icon">☕</div><b>Tazas / Termos</b><p>Regalos corporativos y promociones.</p></div>
+        <div class="card svc"><div class="icon">🏷️</div><b>Stickers</b><p>Corte y variedad de tamaños.</p></div>
+        <div class="card svc"><div class="icon">🪪</div><b>Placas</b><p>Acrílico/madera con QR o grabado.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- TRABAJOS -->
+  <!-- TRABAJOS (placeholders listos) -->
   <section id="trabajos">
     <div class="container">
       <div class="head">
         <div>
-          <h2>Trabajos (ejemplos)</h2>
-          <p>Cuando tengas fotos reales, las reemplazamos por estas. Por ahora son ejemplos claros para que se vea como empresa.</p>
+          <h2>Trabajos Realizados</h2>
+          <p>Dejé 6 espacios. Luego subes tus fotos (mismo nivel que index) y los reemplazamos.</p>
         </div>
-        <p>Catálogo pronto</p>
+        <a class="btn" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20ver%20trabajos%20y%20cotizar.%20" target="_blank" rel="noopener">Pedir catálogo</a>
       </div>
 
-      <div class="gallery">
-        <div class="shot">
-          <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="900" height="520" fill="#fff"/>
-            <rect x="60" y="60" width="780" height="160" rx="26" fill="#f3f6ff" stroke="#e6e9f2"/>
-            <rect x="60" y="250" width="380" height="210" rx="26" fill="#fff4f8" stroke="#e6e9f2"/>
-            <rect x="460" y="250" width="380" height="210" rx="26" fill="#fff7e6" stroke="#e6e9f2"/>
-          </svg>
-          <div class="cap">Uniformes / serigrafía / DTF</div>
+      <div class="grid">
+        <div class="card work">
+          <div class="ph">FOTO 1</div>
+          <div class="cap"><b>Uniformes impresos</b><small>Sube tu imagen luego</small></div>
         </div>
-
-        <div class="shot">
-          <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="900" height="520" fill="#fff"/>
-            <circle cx="620" cy="210" r="160" fill="#f3f6ff"/>
-            <circle cx="320" cy="330" r="180" fill="#fff4f8"/>
-            <rect x="90" y="110" width="720" height="300" rx="30" fill="#fff" stroke="#e6e9f2"/>
-          </svg>
-          <div class="cap">Bordados premium</div>
+        <div class="card work">
+          <div class="ph">FOTO 2</div>
+          <div class="cap"><b>Bordado corporativo</b><small>Sube tu imagen luego</small></div>
         </div>
-
-        <div class="shot">
-          <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="900" height="520" fill="#fff"/>
-            <rect x="120" y="90" width="660" height="340" rx="30" fill="#f3f6ff" stroke="#e6e9f2"/>
-            <path d="M240 360 L450 170 L660 360" stroke="#0ea5e9" stroke-width="20" stroke-linecap="round" fill="none" opacity=".6"/>
-          </svg>
-          <div class="cap">Láser / placas / QR</div>
+        <div class="card work">
+          <div class="ph">FOTO 3</div>
+          <div class="cap"><b>Promocionales</b><small>Sube tu imagen luego</small></div>
+        </div>
+        <div class="card work">
+          <div class="ph">FOTO 4</div>
+          <div class="cap"><b>Gorras</b><small>Sube tu imagen luego</small></div>
+        </div>
+        <div class="card work">
+          <div class="ph">FOTO 5</div>
+          <div class="cap"><b>Placas / Láser</b><small>Sube tu imagen luego</small></div>
+        </div>
+        <div class="card work">
+          <div class="ph">FOTO 6</div>
+          <div class="cap"><b>Eventos</b><small>Sube tu imagen luego</small></div>
         </div>
       </div>
     </div>
@@ -642,26 +666,37 @@
     <div class="container">
       <div class="head">
         <div>
-          <h2>Contacto</h2>
-          <p>Parque Lefevre, Panamá • <strong>Local PB-19</strong>. Escríbenos para cotizar.</p>
+          <h2>Contáctenos</h2>
+          <p>Parque Lefevre • Av. Ernesto T. Lefevre, Plaza Royal Park • <b>Local PB-19</b></p>
         </div>
         <a class="btn primary" href="https://wa.me/50763647927?text=Hola%20Gift%26more%2C%20quiero%20informaci%C3%B3n%20y%20cotizaci%C3%B3n%20por%20favor." target="_blank" rel="noopener">WhatsApp →</a>
       </div>
 
-      <div class="contact">
-        <div class="card">
-          <b>📍 Dirección</b>
-          <p>Parque Lefevre, Panamá<br><strong>Local PB-19</strong></p>
-          <p style="font-size:12px;color:var(--muted);margin-top:10px">
-            Cuando me pases el link exacto del pin de Waze, lo dejo perfecto.
+      <div class="grid contact">
+        <div class="card mapBox">
+          <b>📍 Ubicación (Waze)</b>
+          <p style="color:var(--muted);margin:8px 0 0;line-height:1.6">
+            Si quieres exactamente el mismo pin de Figura Rostro KG, pásame el link de Waze y lo pongo directo.
+            Por ahora, el botón abre <b>PH Royal Park</b>.
           </p>
+          <ul class="list">
+            <li><span class="check">✓</span><div><b>Dirección</b><div style="color:var(--muted);font-size:12px;margin-top:4px">Plaza Royal Park, Local PB-19, Av. Ernesto T. Lefevre</div></div></li>
+            <li><span class="check">✓</span><div><b>Horarios</b><div style="color:var(--muted);font-size:12px;margin-top:4px">Colócalos aquí cuando los definas</div></div></li>
+            <li><span class="check">✓</span><div><b>Entrega</b><div style="color:var(--muted);font-size:12px;margin-top:4px">Coordinación por WhatsApp</div></div></li>
+          </ul>
         </div>
 
-        <div class="card">
-          <b>📲 Instagram</b>
-          <p><a href="https://www.instagram.com/gifts_andmore507?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">@gifts_andmore507</a></p>
-          <b style="margin-top:14px">📌 WhatsApp</b>
-          <p>+507 6364-7927</p>
+        <div class="card infoBox">
+          <b>📲 Contacto</b>
+          <ul class="list">
+            <li><span class="check">✓</span><div><b>WhatsApp</b><div style="color:var(--muted);font-size:12px;margin-top:4px">+507 6364-7927</div></div></li>
+            <li><span class="check">✓</span><div><b>Instagram</b><div style="color:var(--muted);font-size:12px;margin-top:4px">@gifts_andmore507</div></div></li>
+            <li><span class="check">✓</span><div><b>Email</b><div style="color:var(--muted);font-size:12px;margin-top:4px">ventas@giftandmore.pa (puedes cambiarlo)</div></div></li>
+          </ul>
+
+          <div style="margin-top:14px">
+            <a class="btn primary" href="https://waze.com/ul?q=PH%20Royal%20Park%20Parque%20Lefevre%20Panam%C3%A1&navigate=yes" target="_blank" rel="noopener">Abrir Waze →</a>
+          </div>
         </div>
       </div>
     </div>
@@ -670,8 +705,8 @@
   <footer>
     <div class="container">
       <div class="foot">
-        <div><strong>Gift&more</strong> — Serigrafía • Bordados • Láser • Promocionales • Arreglos florales</div>
-        <div>© <span id="year"></span> • Parque Lefevre • Local PB-19 • Panamá</div>
+        <div><strong>Gift&more</strong> — Bordados • Serigrafía • Láser • Promocionales</div>
+        <div>© <span id="year"></span> • Plaza Royal Park • Local PB-19 • Parque Lefevre, Panamá</div>
       </div>
     </div>
   </footer>
@@ -687,11 +722,10 @@
       panel.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=>panel.classList.remove('show')));
     }
 
-    // Slider
+    // Slider (3)
     const slidesEl = document.getElementById('slides');
     const dots = document.querySelectorAll('.dot');
     let i = 0;
-
     function go(n){
       i = n;
       slidesEl.style.transform = `translateX(-${n*100}%)`;
@@ -699,7 +733,7 @@
       dots[n].classList.add('active');
     }
     dots.forEach(d=> d.addEventListener('click', ()=> go(Number(d.dataset.i)) ));
-    setInterval(()=> go((i+1)%3), 6000);
+    setInterval(()=> go((i+1)%3), 6500);
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
