@@ -10,21 +10,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
 
   <style>
-    /* --- VARIABLES --- */
+    /* --- VARIABLES & RESET --- */
     :root {
       --bg-dark: #0f172a;
       --bg-panel-dark: #1e293b;
       --bg-light: #ffffff;
       --bg-gray: #f1f5f9;
-      
       --text-main-dark: #f1f5f9;
       --text-main-light: #1e293b;
       --text-muted: #64748b;
-      
       --brand-blue: #0ea5e9;
       --brand-pink: #db2777;
       --brand-gold: #f59e0b;
-      
       --radius: 16px;
       --transition: all 0.3s ease;
     }
@@ -36,8 +33,9 @@
     ul { list-style: none; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     .serif { font-family: 'Playfair Display', serif; }
-    
     .section-padding { padding: 100px 0; }
+    
+    /* Titulos de Sección */
     .section-head { text-align: center; margin-bottom: 60px; position: relative; z-index: 2; }
     .section-head h2 { font-size: 2.8rem; margin-bottom: 10px; font-weight: 800; letter-spacing: -1px; }
     .section-head p { font-size: 1.1rem; }
@@ -80,10 +78,10 @@
     .dot { width: 12px; height: 12px; background: rgba(255,255,255,0.3); border-radius: 50%; cursor: pointer; }
     .dot.active { background: var(--brand-blue); }
 
-    /* --- NOSOTROS --- */
+    /* --- NOSOTROS (VIDEO) --- */
     .about-section { background-color: var(--bg-light); color: var(--text-main-light); }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .video-frame { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+    .video-frame { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); background: #000; }
     .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--text-main-light); }
     .about-text p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 15px; }
 
@@ -117,9 +115,8 @@
     /* --- FLORAL --- */
     .floral-section { 
       padding: 180px 0; position: relative; 
-      /* Fíjate: Aquí llama al archivo local */
+      /* NOMBRE DE ARCHIVO LOCAL */
       background: url('bg-flores.jpg') center/cover fixed no-repeat; 
-      /* Fallback si no hay imagen */
       background-color: #2e1065; 
     }
     .floral-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0.2) 100%); }
@@ -132,7 +129,7 @@
     /* --- CATERING --- */
     .catering-section { 
       padding: 120px 0; position: relative; 
-      /* Archivo local */
+      /* NOMBRE DE ARCHIVO LOCAL */
       background: url('bg-catering.jpg') center/cover fixed no-repeat; 
       background-color: #1e1b4b;
     }
@@ -149,7 +146,7 @@
     /* --- PEDIDOS --- */
     .orders-section-illustrated { 
       position: relative; 
-      /* Archivo local */
+      /* NOMBRE DE ARCHIVO LOCAL */
       background: url('bg-pedidos.jpg') center/cover fixed no-repeat; 
       background-color: #f8fafc;
     }
@@ -259,7 +256,7 @@
   <section class="section-padding about-section">
     <div class="container about-grid">
       <div class="video-frame">
-        <img src="video-poster.jpg" style="width:100%; height:100%; object-fit:cover;">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TnptpJIcMQQ?si=EqL-u9V8a7y_5F5_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       <div class="about-text">
         <span style="color:var(--brand-blue); font-weight:700; letter-spacing:1px;">NUESTRA HISTORIA</span>
@@ -525,15 +522,10 @@
       if(carouselIndex > maxIndex) carouselIndex = 0;
       
       const width = track.clientWidth / itemsPerView;
-      // Gap adjustment
-      const gap = 30; // matched css gap
+      const gap = 30;
       const moveAmount = (carouselIndex * (100 / itemsPerView)) + (carouselIndex > 0 ? (gap * carouselIndex / track.clientWidth * 100) : 0); 
-      
-      // Simplificado: Translating by percentage
       track.style.transform = `translateX(-${carouselIndex * (100 / itemsPerView)}%) translateX(-${carouselIndex * gap}px)`;
     }
-    
-    // Auto move carousel
     setInterval(() => { moveCarousel(1); }, 4000);
 
     // --- WHATSAPP FUNCTIONS ---
