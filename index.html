@@ -3,153 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gift&More | Personalización, Flores y Eventos</title>
+  <title>Gift&More | Personalización y Eventos</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
 
   <style>
-    /* --- CONFIGURACIÓN GLOBAL --- */
+    /* --- VARIABLES --- */
     :root {
-      --bg-dark: #0f172a;       /* Fondo Principal Oscuro */
-      --bg-panel: #1e293b;      /* Paneles Oscuros */
-      --bg-light: #f8fafc;      /* Fondo Claro para Pedidos */
+      --bg-dark: #0f172a;
+      --bg-panel-dark: #1e293b;
+      --bg-light: #ffffff;
+      --bg-gray: #f1f5f9;
       
-      --text-light: #f1f5f9;
-      --text-dark: #1e293b;
-      --text-gray: #94a3b8;
+      --text-main-dark: #f1f5f9;
+      --text-main-light: #1e293b;
+      --text-muted: #64748b;
       
-      --brand-blue: #0ea5e9;    /* Azul Corporativo */
-      --brand-pink: #db2777;    /* Rosa Floral */
-      --brand-gold: #fbbf24;    /* Dorado Eventos */
+      --brand-blue: #0ea5e9;
+      --brand-pink: #db2777;
+      --brand-gold: #f59e0b;
       
-      --radius: 12px;
+      --radius: 16px;
       --transition: all 0.3s ease;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-main-dark); overflow-x: hidden; scroll-behavior: smooth; }
     a { text-decoration: none; color: inherit; transition: var(--transition); }
     img { width: 100%; display: block; object-fit: cover; }
     ul { list-style: none; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     .serif { font-family: 'Playfair Display', serif; }
 
-    /* --- BOTONES --- */
-    .btn { display: inline-block; padding: 10px 24px; border-radius: 50px; font-weight: 700; border: none; cursor: pointer; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
+    /* --- UTILIDADES --- */
+    .section-head { text-align: center; margin-bottom: 60px; }
+    .section-head h2 { font-size: 2.8rem; margin-bottom: 10px; font-weight: 800; letter-spacing: -1px; }
+    .section-head p { font-size: 1.1rem; color: var(--text-muted); }
     
+    /* Botones */
+    .btn { display: inline-block; padding: 12px 30px; border-radius: 50px; font-weight: 700; border: none; cursor: pointer; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
     .btn-primary { background: linear-gradient(135deg, var(--brand-blue), #2563eb); color: white; box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3); }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(14, 165, 233, 0.5); }
-    
-    .btn-floral { background: var(--brand-pink); color: white; box-shadow: 0 4px 15px rgba(219, 39, 119, 0.3); }
-    .btn-floral:hover { background: #be185d; }
-    
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(14, 165, 233, 0.5); }
     .btn-gold { background: linear-gradient(135deg, var(--brand-gold), #d97706); color: white; }
 
     /* --- TOP BAR --- */
-    .top-bar { background: #020617; padding: 8px 0; font-size: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .top-bar { background: #020617; padding: 10px 0; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
     .top-flex { display: flex; justify-content: space-between; align-items: center; }
-    .top-info span { margin-right: 15px; color: #cbd5e1; }
-    .social-icons a { margin-left: 10px; color: white; font-weight: bold; }
-    .social-icons a:hover { color: var(--brand-blue); }
+    .top-info span { margin-right: 20px; color: #cbd5e1; }
+    .social-icons a { margin-left: 15px; color: white; font-weight: 600; }
 
-    /* --- HEADER STICKY --- */
-    header { position: sticky; top: 0; width: 100%; z-index: 1000; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 15px 0; }
+    /* --- HEADER --- */
+    header { position: sticky; top: 0; z-index: 1000; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
     .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 1.5rem; font-weight: 900; color: white; }
-    .logo span { color: var(--brand-blue); }
-    .nav-links { display: flex; gap: 20px; }
-    .nav-links a { font-size: 0.9rem; color: var(--text-gray); font-weight: 500; }
+    
+    /* LOGO NUEVO */
+    .brand-logo { display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: 900; color: white; }
+    .brand-icon { 
+      width: 40px; height: 40px; background: linear-gradient(135deg, var(--brand-blue), var(--brand-pink)); 
+      border-radius: 8px; display: grid; place-items: center; color: white; 
+    }
+    
+    .nav-links { display: flex; gap: 25px; }
+    .nav-links a { color: #94a3b8; font-weight: 500; }
     .nav-links a:hover { color: var(--brand-blue); }
 
-    /* --- SLIDER (3 SLIDES) --- */
-    .slider-container { position: relative; height: 600px; overflow: hidden; }
-    .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease; display: flex; align-items: center; justify-content: center; text-align: center; }
+    /* --- SLIDER --- */
+    .hero-slider { position: relative; height: 650px; overflow: hidden; }
+    .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; display: flex; align-items: center; justify-content: center; text-align: center; }
     .slide.active { opacity: 1; z-index: 1; }
     .slide-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); }
-    .slide-content { position: relative; z-index: 2; max-width: 800px; padding: 20px; }
-    .slide-content h2 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 15px; font-weight: 800; }
-    .slide-content p { font-size: 1.2rem; color: #cbd5e1; margin-bottom: 25px; }
-    .slider-dots { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10; }
+    .slide-content { position: relative; z-index: 2; max-width: 900px; padding: 20px; }
+    .slide-content h2 { font-size: 4rem; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+    .slide-content p { font-size: 1.3rem; color: #e2e8f0; margin-bottom: 30px; }
+    .slider-dots { position: absolute; bottom: 30px; width: 100%; display: flex; justify-content: center; gap: 10px; z-index: 10; }
     .dot { width: 12px; height: 12px; background: rgba(255,255,255,0.3); border-radius: 50%; cursor: pointer; }
     .dot.active { background: var(--brand-blue); }
 
-    /* --- SECCIÓN NOSOTROS (VIDEO) --- */
-    .about-section { padding: 80px 0; background: #131c2e; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-    .video-box { position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 16/9; background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); }
-    .play-icon { position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size: 4rem; color: white; opacity: 0.8; pointer-events: none; }
-    .about-text h2 { font-size: 2.2rem; margin-bottom: 20px; }
-    .about-text p { color: var(--text-gray); margin-bottom: 15px; text-align: justify; }
+    /* --- NOSOTROS (FONDO BLANCO - CLARO) --- */
+    .about-section { padding: 100px 0; background-color: var(--bg-light); color: var(--text-main-light); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .video-frame { 
+      position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; 
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); 
+    }
+    .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--text-main-light); }
+    .about-text p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 15px; }
 
-    /* --- TIENDA (PRODUCTOS) --- */
-    .shop-section { padding: 80px 0; }
-    .section-head { text-align: center; margin-bottom: 50px; }
-    .section-head h2 { font-size: 2.5rem; margin-bottom: 10px; }
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .product-card { background: var(--bg-panel); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; position: relative; }
-    .product-card:hover { transform: translateY(-5px); border-color: var(--brand-blue); }
-    .p-img { height: 220px; }
-    .p-info { padding: 20px; }
-    .p-price { display: block; font-size: 1.3rem; color: var(--brand-blue); font-weight: 700; margin: 10px 0; }
+    /* --- TIENDA (FONDO OSCURO) --- */
+    .shop-section { padding: 100px 0; background-color: var(--bg-dark); }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+    .product-card { 
+      background: var(--bg-panel-dark); border-radius: var(--radius); overflow: hidden; 
+      border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; 
+    }
+    .product-card:hover { transform: translateY(-10px); border-color: var(--brand-blue); }
+    .p-img { height: 260px; }
+    .p-info { padding: 25px; }
+    .p-price { font-size: 1.5rem; color: var(--brand-blue); font-weight: 700; margin: 10px 0; display: block; }
 
-    /* --- SERVICIOS (THUMBNAILS) --- */
-    .services-section { padding: 80px 0; background: #0b1120; }
-    .svc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-    .svc-item { display: flex; align-items: center; gap: 15px; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; cursor: pointer; }
-    .svc-item:hover { background: rgba(255,255,255,0.08); border-color: var(--brand-blue); }
-    .svc-thumb { width: 60px; height: 60px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
-    .svc-info h4 { font-size: 1rem; margin-bottom: 2px; }
-    .svc-info span { font-size: 0.75rem; color: var(--brand-blue); font-weight: 600; text-transform: uppercase; }
+    /* --- CATÁLOGO SERVICIOS (FONDO GRIS CLARO - AMPLIO) --- */
+    .services-section { padding: 100px 0; background-color: var(--bg-gray); color: var(--text-main-light); }
+    .svc-grid-big { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Tarjetas más anchas */
+      gap: 30px; 
+    }
+    .svc-card-big {
+      background: white; padding: 20px; border-radius: 16px;
+      display: flex; align-items: center; gap: 20px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      transition: 0.3s; cursor: pointer; border: 1px solid #e2e8f0;
+    }
+    .svc-card-big:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15); border-color: var(--brand-blue); }
+    .svc-img-big { width: 80px; height: 80px; border-radius: 12px; object-fit: cover; }
+    .svc-content h3 { font-size: 1.2rem; margin-bottom: 5px; color: var(--text-main-light); }
+    .svc-content span { color: var(--brand-blue); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; }
 
-    /* --- SECCIÓN FLORAL (DEDICADA) --- */
-    .floral-section { padding: 100px 0; position: relative; background: url('https://images.unsplash.com/photo-1490750967868-58cb75069ed6?q=80&w=2000') center/cover fixed; }
-    .floral-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%); }
-    .floral-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-    .floral-card { background: rgba(255, 255, 255, 0.95); color: #333; padding: 30px; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); max-width: 450px; }
-    .f-input, .f-select, .f-text { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
+    /* --- FLORAL (FONDO IMAGEN ELEGANTE) --- */
+    .floral-section { 
+      padding: 120px 0; position: relative; 
+      background: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000') center/cover fixed; 
+    }
+    .floral-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%); }
+    .floral-content { position: relative; z-index: 2; color: white; max-width: 600px; }
 
-    /* --- EVENTOS & CATERING (WIDE) --- */
-    .wide-banner { padding: 80px 0; background-size: cover; background-position: center; position: relative; background-attachment: fixed; }
-    .wide-overlay { position: absolute; inset: 0; background: rgba(15, 23, 42, 0.85); }
-    .wide-content { position: relative; z-index: 2; display: flex; gap: 40px; align-items: center; justify-content: space-between; }
-    .check-list li { margin-bottom: 8px; display: flex; gap: 10px; align-items: center; }
+    /* --- CATERING (FONDO IMAGEN CLARO) --- */
+    .catering-section { 
+      padding: 120px 0; position: relative; 
+      background: url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2000') center/cover fixed; 
+    }
+    .catering-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); /* Filtro reducido al 50% */ }
+    .catering-content { position: relative; z-index: 2; text-align: center; color: white; }
+    
+    /* --- PEDIDOS GENERAL (FONDO CLARO + 3 COLUMNAS) --- */
+    .orders-section { padding: 100px 0; background-color: white; color: var(--text-main-light); }
+    .orders-grid { 
+      display: grid; 
+      grid-template-columns: repeat(3, 1fr); /* 3 Columnas en Desktop */
+      gap: 30px; margin-top: 50px; 
+    }
+    
+    /* Cajas Oscuras de Pedido */
+    .order-box {
+      background: var(--bg-dark); color: white;
+      padding: 35px; border-radius: 20px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .order-box h3 { font-size: 1.5rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+    .modern-select, .modern-input {
+      width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 10px; border: 1px solid #334155;
+      background: #1e293b; color: white; font-family: 'Inter', sans-serif;
+    }
 
-    /* --- BLOG --- */
-    .blog-section { padding: 80px 0; }
-    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .blog-card { background: var(--bg-panel); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
-    .blog-img { height: 180px; }
-    .blog-body { padding: 20px; }
+    /* --- FOOTER (GRANDE) --- */
+    footer { background: #020617; padding: 80px 0 30px; color: #94a3b8; border-top: 1px solid #1e293b; }
+    .footer-main { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; margin-bottom: 60px; }
+    .footer-slogan { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: white; margin-bottom: 20px; line-height: 1.3; }
+    .footer-col h4 { color: white; font-size: 1.2rem; margin-bottom: 20px; }
+    .footer-close { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; font-size: 0.9rem; }
 
-    /* --- PEDIDOS GENERAL (FONDO CLARO) --- */
-    .general-orders { padding: 80px 0; background-color: var(--bg-light); color: var(--text-dark); }
-    .order-box-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-    .dark-card { background: var(--bg-dark); color: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-    .modern-select { width: 100%; padding: 14px; background: #1e293b; color: white; border: 1px solid #475569; border-radius: 8px; margin-bottom: 20px; }
+    /* FLOTANTE MOVIL */
+    .float-wa { position: fixed; top: 50%; right: 0; transform: translateY(-50%); background: #25d366; color: white; padding: 15px 15px 15px 20px; border-top-left-radius: 50px; border-bottom-left-radius: 50px; z-index: 2000; display: none; box-shadow: -5px 5px 20px rgba(0,0,0,0.2); cursor: pointer; }
 
-    /* --- FOOTER --- */
-    footer { background: #020617; padding: 50px 0; border-top: 1px solid #1e293b; font-size: 0.9rem; color: #94a3b8; }
-    .foot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-
-    /* --- FLOTANTE MÓVIL --- */
-    .float-wa { position: fixed; top: 50%; right: 0; transform: translateY(-50%); background: #25d366; color: white; padding: 12px 14px 12px 18px; border-top-left-radius: 50px; border-bottom-left-radius: 50px; box-shadow: -2px 5px 15px rgba(0,0,0,0.3); z-index: 2000; display: none; cursor: pointer; }
-
-    /* --- RESPONSIVE --- */
-    @media(max-width: 900px) {
-      .about-grid, .floral-grid, .wide-content { grid-template-columns: 1fr; flex-direction: column; text-align: center; }
+    /* RESPONSIVE */
+    @media(max-width: 1024px) {
+      .orders-grid { grid-template-columns: 1fr; } /* Apilar pedidos en tablets/movil */
+      .about-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .slide-content h2 { font-size: 2.8rem; }
       .float-wa { display: block; }
-      .top-flex { flex-direction: column; gap: 5px; }
     }
   </style>
 </head>
@@ -158,54 +183,60 @@
   <div class="top-bar">
     <div class="container top-flex">
       <div class="top-info">
+        <span>📍 Edif. Ejecutivo, Piso 4, Calle 50</span>
         <span>📞 +507 6364-7927</span>
-        <span>📍 Edif. Ejecutivo, Calle 50, Piso 4</span>
       </div>
       <div class="social-icons">
-        <a href="https://instagram.com/tu_usuario" target="_blank">Instagram ↗</a>
-        <a href="https://youtube.com/tu_canal" target="_blank">YouTube ▶</a>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">Facebook</a>
       </div>
     </div>
   </div>
 
   <header>
     <div class="container nav-flex">
-      <div class="logo">Gift<span style="color:var(--brand-blue)">&</span>More.</div>
+      <div class="brand-logo">
+        <div class="brand-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
+        </div>
+        Gift&More.
+      </div>
+      
       <nav class="nav-links">
         <a href="#inicio">Inicio</a>
-        <a href="#nosotros">Nosotros</a>
         <a href="#tienda">Tienda</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#flores">Flores</a>
-        <a href="#blog">Blog</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#pedidos">Hacer Pedido</a>
       </nav>
-      <a href="#pedidos" class="btn btn-primary">Hacer Pedido</a>
+      <a href="#pedidos" class="btn btn-primary">Cotizar</a>
     </div>
   </header>
 
-  <section id="inicio" class="slider-container">
+  <section id="inicio" class="hero-slider">
     <div class="slide active">
-      <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=2000" class="slide-bg" alt="Regalos">
+      <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=2000" class="slide-bg">
       <div class="slide-content">
-        <h2>Detalles que<br>enamoran</h2>
-        <p>Personalización exclusiva para empresas y particulares.</p>
-        <a href="#tienda" class="btn btn-primary">Ver Productos</a>
+        <h2>Personalizando<br>Recuerdos</h2>
+        <p>Convertimos tus ideas en regalos y eventos únicos.</p>
+        <a href="#catalogo" class="btn btn-primary">Ver Servicios</a>
       </div>
     </div>
     <div class="slide">
-      <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2000" class="slide-bg" alt="Corporativo">
+      <img src="https://images.unsplash.com/photo-1530103862676-de3c9a59af38?q=80&w=2000" class="slide-bg">
+      <div class="slide-content">
+        <h2>Celebrando<br>Momentos</h2>
+        <p>Expertos en decoración de fiestas y catering.</p>
+        <a href="#eventos" class="btn btn-gold">Planear Evento</a>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2000" class="slide-bg">
       <div class="slide-content">
         <h2>Soluciones<br>Corporativas</h2>
-        <p>Uniformes, branding y material promocional.</p>
-        <a href="#servicios" class="btn btn-primary">Cotizar Lote</a>
-      </div>
-    </div>
-    <div class="slide">
-      <img src="https://images.unsplash.com/photo-1530103862676-de3c9a59af38?q=80&w=2000" class="slide-bg" alt="Eventos">
-      <div class="slide-content">
-        <h2>Eventos<br>Inolvidables</h2>
-        <p>Decoración, globos y catering para tu celebración.</p>
-        <a href="#eventos" class="btn btn-gold">Planear Evento</a>
+        <p>Impulsa tu marca con merchandising de calidad.</p>
+        <a href="#pedidos" class="btn btn-primary">Cotizar Branding</a>
       </div>
     </div>
     <div class="slider-dots">
@@ -215,17 +246,16 @@
     </div>
   </section>
 
-  <section id="nosotros" class="about-section">
+  <section class="about-section">
     <div class="container about-grid">
-      <div class="video-box">
-        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800" style="width:100%; height:100%; object-fit:cover;" alt="Taller">
-        <div class="play-icon">▶</div>
-      </div>
+      <div class="video-frame">
+        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=800" style="width:100%; height:100%; object-fit:cover;">
+        </div>
       <div class="about-text">
-        <small style="color:var(--brand-blue); font-weight:700;">NUESTRA HISTORIA</small>
-        <h2>De Chiriquí para Panamá:<br>Una visión de servicio</h2>
-        <p>Soy una emprendedora orgullosamente chiricana que llegó a la capital con una maleta cargada de sueños. En <strong>Gift&More</strong>, no solo vendemos productos, creamos memorias.</p>
-        <p>Entendemos el valor de tus recuerdos y trabajamos incansablemente para hacerlos tangibles a través de la personalización y el detalle.</p>
+        <span style="color:var(--brand-blue); font-weight:700; letter-spacing:1px;">NUESTRA HISTORIA</span>
+        <h2>Pasión por los detalles</h2>
+        <p>Desde Chiriquí hasta la capital, Gift&More nació con una misión simple: poner corazón a cada entrega. Somos un equipo apasionado por el diseño, la calidad y la puntualidad.</p>
+        <p>Ya sea un arreglo floral íntimo o un banquete corporativo, cuidamos cada aspecto para que tú solo te preocupes por disfrutar.</p>
       </div>
     </div>
   </section>
@@ -234,217 +264,210 @@
     <div class="container">
       <div class="section-head">
         <h2>Productos Destacados</h2>
-        <p style="color:#94a3b8">Listos para entrega inmediata</p>
+        <p>Disponibles para compra inmediata</p>
       </div>
       <div class="product-grid">
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1577909363842-990e44e2e288?w=400" class="p-img" alt="Kit Tazas">
+          <img src="https://images.unsplash.com/photo-1577909363842-990e44e2e288?w=500" class="p-img">
           <div class="p-info">
             <h3>Kit Pareja</h3>
             <span class="p-price">$25.00</span>
-            <button class="btn btn-primary" style="width:100%" onclick="buyProduct('Kit Pareja')">Comprar</button>
+            <button class="btn btn-primary" style="width:100%" onclick="buy('Kit Pareja')">Comprar</button>
           </div>
         </div>
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=400" class="p-img" alt="Termo">
+          <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=500" class="p-img">
           <div class="p-info">
             <h3>Termo 30oz</h3>
             <span class="p-price">$18.00</span>
-            <button class="btn btn-primary" style="width:100%" onclick="buyProduct('Termo 30oz')">Comprar</button>
+            <button class="btn btn-primary" style="width:100%" onclick="buy('Termo 30oz')">Comprar</button>
           </div>
         </div>
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1616606103915-dea7be788566?w=400" class="p-img" alt="Agenda">
+          <img src="https://images.unsplash.com/photo-1616606103915-dea7be788566?w=500" class="p-img">
           <div class="p-info">
             <h3>Agenda 2026</h3>
             <span class="p-price">$12.00</span>
-            <button class="btn btn-primary" style="width:100%" onclick="buyProduct('Agenda 2026')">Comprar</button>
+            <button class="btn btn-primary" style="width:100%" onclick="buy('Agenda')">Comprar</button>
           </div>
         </div>
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1574628286127-d0d525cc3657?w=400" class="p-img" alt="Kit Fiesta">
+          <img src="https://images.unsplash.com/photo-1574628286127-d0d525cc3657?w=500" class="p-img">
           <div class="p-info">
             <h3>Kit Fiesta</h3>
             <span class="p-price">$45.00</span>
-            <button class="btn btn-primary" style="width:100%" onclick="buyProduct('Kit Fiesta')">Comprar</button>
+            <button class="btn btn-primary" style="width:100%" onclick="buy('Kit Fiesta')">Comprar</button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="servicios" class="services-section">
+  <section id="catalogo" class="services-section">
     <div class="container">
       <div class="section-head">
-        <h2>Catálogo de Personalización</h2>
-        <p style="color:#94a3b8">Haz clic para cotizar</p>
+        <h2 style="color:var(--text-main-light)">Catálogo de Personalización</h2>
+        <p>Explora nuestra variedad de servicios a medida</p>
       </div>
-      <div class="svc-grid">
-        <div class="svc-item" onclick="cotizarGeneral('Tazas')"><img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=100" class="svc-thumb"><div class="svc-info"><h4>Tazas</h4><span>Cerámica</span></div></div>
-        <div class="svc-item" onclick="cotizarGeneral('Camisetas')"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=100" class="svc-thumb"><div class="svc-info"><h4>Camisetas</h4><span>Sublimación</span></div></div>
-        <div class="svc-item" onclick="cotizarGeneral('Gorras')"><img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=100" class="svc-thumb"><div class="svc-info"><h4>Gorras</h4><span>Bordado</span></div></div>
-        <div class="svc-item" onclick="cotizarGeneral('Thermos')"><img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=100" class="svc-thumb"><div class="svc-info"><h4>Thermos</h4><span>Láser</span></div></div>
-        <div class="svc-item" onclick="cotizarGeneral('Agendas')"><img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=100" class="svc-thumb"><div class="svc-info"><h4>Agendas</h4><span>Corporativas</span></div></div>
-        <div class="svc-item" onclick="cotizarGeneral('Llaveros')"><img src="https://images.unsplash.com/photo-1620138546344-7b2c38516edf?w=100" class="svc-thumb"><div class="svc-info"><h4>Llaveros</h4><span>Resina</span></div></div>
-        <div class="svc-item" onclick="cotizarGeneral('Placas Auto')"><img src="https://images.unsplash.com/photo-1617103996702-96ff29b1c467?w=100" class="svc-thumb"><div class="svc-info"><h4>Placas</h4><span>Metal/Acrílico</span></div></div>
-        <div class="svc-item" onclick="cotizarGeneral('Bolsas Tela')"><img src="https://images.unsplash.com/photo-1597484662317-9bd7bdda2907?w=100" class="svc-thumb"><div class="svc-info"><h4>Bolsas</h4><span>Ecológicas</span></div></div>
+      
+      <div class="svc-grid-big">
+        <div class="svc-card-big" onclick="quote('Camisetas')">
+          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=150" class="svc-img-big">
+          <div class="svc-content"><h3>Camisetas</h3><span>Sublimación & DTF</span></div>
+        </div>
+        <div class="svc-card-big" onclick="quote('Tazas')">
+          <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=150" class="svc-img-big">
+          <div class="svc-content"><h3>Tazas</h3><span>Cerámica Premium</span></div>
+        </div>
+        <div class="svc-card-big" onclick="quote('Gorras')">
+          <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=150" class="svc-img-big">
+          <div class="svc-content"><h3>Gorras</h3><span>Bordado 3D</span></div>
+        </div>
+        <div class="svc-card-big" onclick="quote('Bolsas')">
+          <img src="https://images.unsplash.com/photo-1597484662317-9bd7bdda2907?w=150" class="svc-img-big">
+          <div class="svc-content"><h3>Bolsas</h3><span>Tela Ecológica</span></div>
+        </div>
+        <div class="svc-card-big" onclick="quote('Thermos')">
+          <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=150" class="svc-img-big">
+          <div class="svc-content"><h3>Thermos</h3><span>Grabado Láser</span></div>
+        </div>
+        <div class="svc-card-big" onclick="quote('Llaveros')">
+          <img src="https://images.unsplash.com/photo-1620138546344-7b2c38516edf?w=150" class="svc-img-big">
+          <div class="svc-content"><h3>Llaveros</h3><span>Resina Epóxica</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="flores" class="floral-section">
+  <section id="eventos" class="floral-section">
     <div class="floral-overlay"></div>
-    <div class="container floral-grid">
-      <div style="color:white;">
-        <span style="font-family:'Playfair Display'; font-style:italic; font-size:1.5rem; color:var(--brand-pink);">Fechas Especiales</span>
-        <h2 style="font-size:3.5rem; margin-bottom:20px;">El Jardín de <br>Gift&More</h2>
-        <p style="font-size:1.1rem; margin-bottom:30px;">Expresa tus sentimientos con diseños florales exclusivos para Bodas, Cumpleaños y Aniversarios.</p>
-        <ul>
-          <li>✨ Arreglos de Rosas</li>
-          <li>✨ Decoración de Eventos</li>
-          <li>✨ Desayunos Sorpresa</li>
-        </ul>
-      </div>
-      <div class="floral-card">
-        <h3>Cotizar Arreglo</h3>
-        <form onsubmit="event.preventDefault(); cotizarFloral();">
-          <select id="f-tipo" class="f-select">
-            <option value="" disabled selected>Motivo del Arreglo</option>
-            <option value="Cumpleaños">Cumpleaños</option>
-            <option value="Aniversario">Aniversario</option>
-            <option value="Boda">Boda</option>
-          </select>
-          <select id="f-producto" class="f-select">
-            <option value="" disabled selected>Producto</option>
-            <option value="Ramo de Rosas">Ramo de Rosas</option>
-            <option value="Caja de Rosas">Caja de Rosas</option>
-            <option value="Arreglo Mixto">Arreglo Mixto</option>
-          </select>
-          <textarea id="f-mensaje" class="f-text" rows="2" placeholder="Detalles..."></textarea>
-          <button type="submit" class="btn btn-floral" style="width:100%;">Cotizar Flores 🌹</button>
-        </form>
-      </div>
+    <div class="container floral-content">
+      <span style="font-family:'Playfair Display'; color:var(--brand-pink); font-size:1.5rem;">El Jardín de Gift&More</span>
+      <h2 style="font-size:3.5rem; margin:10px 0 20px;">Arreglos que<br>Emocionan</h2>
+      <p style="font-size:1.2rem; margin-bottom:30px;">
+        Desde ramos de rosas clásicos hasta montajes florales completos para bodas. Diseñamos con las flores más frescas.
+      </p>
+      <a href="#pedidos" class="btn" style="background:var(--brand-pink); color:white;">Cotizar Flores</a>
     </div>
   </section>
 
-  <section id="eventos" class="wide-banner" style="background-image: url('https://images.unsplash.com/photo-1519225468063-50926c38858e?q=80&w=2000');">
-    <div class="wide-overlay"></div>
-    <div class="container wide-content">
-      <div>
-        <span style="color:var(--brand-pink); font-weight:700;">CELEBRACIONES</span>
-        <h2 style="font-size:3rem;">Decoración de Ensueño</h2>
-        <p style="color:#cbd5e1; margin-bottom:20px;">Globos, backings y montaje para tus momentos únicos.</p>
-        <button class="btn btn-primary" onclick="cotizarGeneral('Decoración Eventos')">Cotizar Decoración</button>
-      </div>
-      <ul class="check-list" style="color:white;">
-        <li>✓ Arcos de Globos</li>
-        <li>✓ Montaje de Mesas</li>
-        <li>✓ Toppers Personalizados</li>
-      </ul>
+  <section class="catering-section">
+    <div class="catering-overlay"></div>
+    <div class="container catering-content">
+      <span style="color:var(--brand-gold); font-weight:700; letter-spacing:2px;">BANQUETES</span>
+      <h2 style="font-size:3.5rem; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">Catering & Staff</h2>
+      <p style="font-size:1.2rem; max-width:700px; margin:0 auto 30px; text-shadow: 0 2px 5px rgba(0,0,0,0.5);">
+        Nos encargamos del sabor y el servicio. Carritos de snacks, barra de bebidas y el mejor equipo de azafatas para tu evento.
+      </p>
+      <a href="#pedidos" class="btn btn-gold">Ver Menú</a>
     </div>
   </section>
 
-  <section class="wide-banner" style="background-image: url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2000');">
-    <div class="wide-overlay"></div>
-    <div class="container wide-content">
-      <div>
-        <span style="color:var(--brand-gold); font-weight:700;">CATERING & STAFF</span>
-        <h2 style="font-size:3rem;">Banquetes y Bebidas</h2>
-        <p style="color:#cbd5e1; margin-bottom:20px;">Nos encargamos de la comida y la atención.</p>
-        <button class="btn btn-gold" onclick="cotizarCatering()">Solicitar Menú</button>
-      </div>
-      <ul class="check-list" style="color:white;">
-        <li>★ Carrito de Snacks (Raspaos/Hotdogs)</li>
-        <li>★ Barra de Cócteles</li>
-        <li>★ Servicio de Azafatas</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="blog" class="blog-section">
+  <section id="pedidos" class="orders-section">
     <div class="container">
       <div class="section-head">
-        <h2>Blog de Novedades</h2>
-        <p style="color:#94a3b8">Tips e ideas</p>
+        <h2 style="color:var(--text-main-light)">Realizar Solicitud</h2>
+        <p>Selecciona el área que deseas cotizar</p>
       </div>
-      <div class="blog-grid">
-        <div class="blog-card">
-          <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=400" class="blog-img">
-          <div class="blog-body"><h3>Regalos Corporativos</h3><p style="font-size:0.9rem; color:#94a3b8">Tendencias 2026 para empresas.</p></div>
+
+      <div class="orders-grid">
+        
+        <div class="order-box" style="border-top: 4px solid var(--brand-pink);">
+          <div>
+            <h3 style="color:var(--brand-pink);">🌹 Flores & Decor</h3>
+            <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:15px;">Bodas, cumpleaños y regalos.</p>
+            <select id="f-tipo" class="modern-select">
+              <option value="" disabled selected>Tipo de Arreglo</option>
+              <option value="Ramo Rosas">Ramo de Rosas</option>
+              <option value="Caja Rosas">Caja de Rosas</option>
+              <option value="Decoración Evento">Decoración Completa</option>
+            </select>
+            <textarea id="f-msg" class="modern-input" rows="2" placeholder="Detalles..."></textarea>
+          </div>
+          <button class="btn" style="background:var(--brand-pink); width:100%;" onclick="sendFloral()">Cotizar Flores</button>
         </div>
-        <div class="blog-card">
-          <img src="https://images.unsplash.com/photo-1530103862676-de3c9a59af38?w=400" class="blog-img">
-          <div class="blog-body"><h3>Decoración con Globos</h3><p style="font-size:0.9rem; color:#94a3b8">Colores de moda este año.</p></div>
+
+        <div class="order-box" style="border-top: 4px solid var(--brand-blue);">
+          <div>
+            <h3 style="color:var(--brand-blue);">📦 Taller & Print</h3>
+            <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:15px;">Impresión y promocionales.</p>
+            <select id="t-tipo" class="modern-select">
+              <option value="" disabled selected>Servicio</option>
+              <option value="Camisetas">Camisetas</option>
+              <option value="Tazas">Tazas</option>
+              <option value="Gorras">Gorras</option>
+              <option value="Placas">Placas</option>
+              <option value="Imprenta">Imprenta</option>
+            </select>
+            <input id="t-cant" type="number" class="modern-input" placeholder="Cantidad aprox.">
+          </div>
+          <button class="btn btn-primary" style="width:100%;" onclick="sendTaller()">Cotizar Taller</button>
         </div>
-        <div class="blog-card">
-          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400" class="blog-img">
-          <div class="blog-body"><h3>Tips para Bodas</h3><p style="font-size:0.9rem; color:#94a3b8">Cómo elegir tus flores ideales.</p></div>
+
+        <div class="order-box" style="border-top: 4px solid var(--brand-gold);">
+          <div>
+            <h3 style="color:var(--brand-gold);">🥂 Catering & Staff</h3>
+            <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:15px;">Comida, bebida y protocolo.</p>
+            <select id="c-tipo" class="modern-select">
+              <option value="" disabled selected>Servicio</option>
+              <option value="Carrito Snacks">Carrito Snacks</option>
+              <option value="Bebidas">Barra Bebidas</option>
+              <option value="Azafatas">Azafatas</option>
+              <option value="Boquitas">Boquitas</option>
+            </select>
+            <input id="c-fecha" type="text" class="modern-input" placeholder="Fecha del evento">
+          </div>
+          <button class="btn btn-gold" style="width:100%;" onclick="sendCatering()">Cotizar Evento</button>
         </div>
+
       </div>
     </div>
   </section>
 
-  <section id="pedidos" class="general-orders">
-    <div class="container">
-      <div class="section-head">
-        <h2 style="color:var(--text-dark)">Hacer Pedido</h2>
-        <p style="color:#64748b">Solicitudes generales de taller y catering</p>
-      </div>
-      <div class="order-box-grid">
-        <div class="dark-card">
-          <h3>📦 Pedidos de Taller</h3>
-          <select id="g-servicio" class="modern-select">
-            <option value="Camisetas">Camisetas / Uniformes</option>
-            <option value="Tazas">Tazas y Vasos</option>
-            <option value="Promocionales">Artículos Promocionales</option>
-            <option value="Imprenta">Papelería</option>
-          </select>
-          <button class="btn btn-primary" style="width:100%" onclick="cotizarTaller()">Solicitar Cotización</button>
+  <footer>
+    <div class="container footer-main">
+      <div class="footer-col">
+        <div class="brand-logo" style="margin-bottom:20px;">
+          <div class="brand-icon" style="width:30px; height:30px; font-size:0.8rem;">G&M</div>
+          Gift&More.
         </div>
-        <div class="dark-card">
-          <h3>🥂 Catering & Staff</h3>
-          <select id="c-servicio" class="modern-select">
-            <option value="Carrito Snacks">Carrito de Snacks</option>
-            <option value="Bebidas">Barra de Bebidas</option>
-            <option value="Azafatas">Azafatas</option>
-            <option value="Boquitas">Boquitas</option>
-          </select>
-          <button class="btn btn-primary" style="width:100%; background: linear-gradient(135deg, #f59e0b, #d97706);" onclick="cotizarCatering()">Solicitar Catering</button>
-        </div>
+        <p class="footer-slogan">"Personalizando recuerdos,<br>celebrando momentos."</p>
+        <p style="font-size:0.9rem; opacity:0.7;">Transformamos lo ordinario en extraordinario con dedicación y estilo.</p>
       </div>
-    </div>
-  </section>
-
-  <footer id="contacto">
-    <div class="container foot-grid">
-      <div>
-        <h4>Gift&More Panamá</h4>
-        <p>Soluciones integrales.</p>
-      </div>
-      <div>
+      
+      <div class="footer-col">
         <h4>Contacto</h4>
         <p>📞 +507 6364-7927</p>
         <p>✉️ contrerasadry0@gmail.com</p>
+        <div style="margin-top:20px; display:flex; gap:10px;">
+           <span style="background:#334155; padding:8px; border-radius:50%;">IG</span>
+           <span style="background:#334155; padding:8px; border-radius:50%;">YT</span>
+           <span style="background:#334155; padding:8px; border-radius:50%;">FB</span>
+        </div>
       </div>
-      <div>
-        <h4>Ubicación</h4>
+      
+      <div class="footer-col">
+        <h4>Visítanos</h4>
         <p>Edificio Ejecutivo, Piso 4</p>
         <p>Calle 50 (Frente a Tower Bank)</p>
+        <p>Ciudad de Panamá</p>
       </div>
     </div>
-    <div style="text-align:center; margin-top:40px; padding-top:20px; border-top:1px solid #1e293b;">
-      &copy; 2026 Gift&More.
+    
+    <div class="footer-close">
+      <p>Gracias por confiar en Gift&More para tus momentos especiales.</p>
+      <p style="margin-top:10px; font-size:0.8rem; opacity:0.5;">&copy; 2026 Todos los derechos reservados.</p>
     </div>
   </footer>
 
   <div class="float-wa" onclick="abrirWa()">
-    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </div>
 
   <script>
     const phone = "50763647927";
 
-    // --- SLIDER LOGIC ---
+    // Slider
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
@@ -457,30 +480,26 @@
     }
     setInterval(() => { setSlide((currentSlide + 1) % slides.length); }, 5000);
 
-    // --- WHATSAPP FUNCTIONS ---
-    function buyProduct(item) {
-      window.open(`https://wa.me/${phone}?text=Hola Gift&More, quiero comprar: ${item}`, '_blank');
+    // WhatsApp Functions
+    function buy(item) { window.open(`https://wa.me/${phone}?text=Hola, quiero comprar: ${item}`, '_blank'); }
+    function quote(item) { window.open(`https://wa.me/${phone}?text=Hola, cotización de: ${item}`, '_blank'); }
+    function abrirWa() { window.open(`https://wa.me/${phone}`, '_blank'); }
+    
+    // Order Forms
+    function sendFloral() {
+      const t = document.getElementById('f-tipo').value;
+      const m = document.getElementById('f-msg').value;
+      window.open(`https://wa.me/${phone}?text=🌹 Hola, cotización Flores:%0A- Tipo: ${t}%0A- Detalle: ${m}`, '_blank');
     }
-    function cotizarGeneral(item) {
-      window.open(`https://wa.me/${phone}?text=Hola, quiero cotizar: ${item}`, '_blank');
+    function sendTaller() {
+      const t = document.getElementById('t-tipo').value;
+      const c = document.getElementById('t-cant').value;
+      window.open(`https://wa.me/${phone}?text=📦 Hola, cotización Taller:%0A- Servicio: ${t}%0A- Cantidad: ${c}`, '_blank');
     }
-    function cotizarFloral() {
-      const tipo = document.getElementById('f-tipo').value;
-      const prod = document.getElementById('f-producto').value;
-      const msg = document.getElementById('f-mensaje').value;
-      const txt = `Hola Gift&More 🌹, deseo cotizar flores:\n- Evento: ${tipo}\n- Producto: ${prod}\n- Nota: ${msg}`;
-      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(txt)}`, '_blank');
-    }
-    function cotizarTaller() {
-      const serv = document.getElementById('g-servicio').value;
-      window.open(`https://wa.me/${phone}?text=Hola, cotización taller: ${serv}`, '_blank');
-    }
-    function cotizarCatering() {
-      const serv = document.getElementById('c-servicio').value;
-      window.open(`https://wa.me/${phone}?text=Hola, cotización catering: ${serv}`, '_blank');
-    }
-    function abrirWa() {
-      window.open(`https://wa.me/${phone}`, '_blank');
+    function sendCatering() {
+      const t = document.getElementById('c-tipo').value;
+      const f = document.getElementById('c-fecha').value;
+      window.open(`https://wa.me/${phone}?text=🥂 Hola, cotización Catering:%0A- Servicio: ${t}%0A- Fecha: ${f}`, '_blank');
     }
   </script>
 
