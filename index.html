@@ -37,7 +37,6 @@
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     .serif { font-family: 'Playfair Display', serif; }
     
-    /* Utilidades */
     .section-padding { padding: 100px 0; }
     .section-head { text-align: center; margin-bottom: 60px; position: relative; z-index: 2; }
     .section-head h2 { font-size: 2.8rem; margin-bottom: 10px; font-weight: 800; letter-spacing: -1px; }
@@ -53,48 +52,21 @@
     .btn-outline-dark:hover { background: white; color: var(--bg-dark); }
     .btn-sm { padding: 8px 20px; font-size: 0.75rem; width: 100%; margin-top: 15px; }
 
-    /* --- TOP BAR (SOLO IG) --- */
+    /* --- TOP BAR --- */
     .top-bar { background: #020617; padding: 10px 0; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
     .top-flex { display: flex; justify-content: space-between; align-items: center; }
     .top-info span { margin-right: 20px; color: #cbd5e1; }
     .social-icons a { margin-left: 15px; color: white; font-weight: 600; display: flex; align-items: center; gap: 5px; }
 
-    /* --- HEADER ORDENADO --- */
-    header { 
-      position: sticky; top: 0; z-index: 1000; 
-      background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); 
-      padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); 
-    }
-    
-    .nav-flex { 
-      display: flex; 
-      align-items: center; 
-      justify-content: space-between; /* Distribuye Logo - Menú - Botón */
-    }
-    
-    /* 1. Logo Libre */
-    .brand-logo { 
-      flex: 0 0 auto; /* No encoger */
-      display: flex; align-items: center; gap: 10px; 
-      font-size: 1.5rem; font-weight: 900; color: white; 
-      margin-right: 40px;
-    }
+    /* --- HEADER --- */
+    header { position: sticky; top: 0; z-index: 1000; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .nav-flex { display: flex; align-items: center; justify-content: space-between; }
+    .brand-logo { flex: 0 0 auto; display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: 900; color: white; margin-right: 40px; }
     .brand-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--brand-blue), var(--brand-pink)); border-radius: 8px; display: grid; place-items: center; color: white; }
-    
-    /* 2. Menú Centrado */
-    .nav-links { 
-      flex: 1; /* Toma el espacio disponible */
-      display: flex; 
-      justify-content: center; /* Centra los items */
-      gap: 30px; 
-    }
+    .nav-links { flex: 1; display: flex; justify-content: center; gap: 30px; }
     .nav-links a { color: #94a3b8; font-weight: 500; font-size: 0.95rem; }
     .nav-links a:hover { color: var(--brand-blue); }
-
-    /* 3. Botón a la derecha */
-    .header-btn {
-      flex: 0 0 auto; 
-    }
+    .header-btn { flex: 0 0 auto; }
 
     /* --- SLIDER HERO --- */
     .hero-slider { position: relative; height: 650px; overflow: hidden; }
@@ -115,49 +87,20 @@
     .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--text-main-light); }
     .about-text p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 15px; }
 
-    /* --- TIENDA CARRUSEL (MODERNO) --- */
+    /* --- TIENDA CARRUSEL --- */
     .shop-section { background-color: var(--bg-dark); position: relative; }
-    
-    .carousel-wrapper {
-      position: relative;
-      overflow: hidden;
-      padding: 20px 0;
-    }
-    
-    .carousel-track {
-      display: flex;
-      gap: 30px;
-      transition: transform 0.5s ease-in-out;
-    }
-    
-    .product-card { 
-      background: var(--bg-panel-dark); border-radius: var(--radius); overflow: hidden; 
-      border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; 
-      min-width: 0; /* Flex fix */
-      flex: 0 0 100%; /* Default mobile (1 item) */
-    }
+    .carousel-wrapper { position: relative; overflow: hidden; padding: 20px 0; }
+    .carousel-track { display: flex; gap: 30px; transition: transform 0.5s ease-in-out; }
+    .product-card { background: var(--bg-panel-dark); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; min-width: 0; flex: 0 0 100%; }
     .product-card:hover { transform: translateY(-5px); border-color: var(--brand-blue); }
     .p-img { height: 260px; width: 100%; object-fit: cover; }
     .p-info { padding: 25px; }
     .p-price { font-size: 1.5rem; color: var(--brand-blue); font-weight: 700; margin: 10px 0; display: block; }
-
-    /* Flechas del Carrusel */
-    .carousel-arrow {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      width: 50px; height: 50px; background: rgba(255,255,255,0.1); backdrop-filter: blur(5px);
-      border: 1px solid rgba(255,255,255,0.2); border-radius: 50%;
-      color: white; font-size: 1.5rem; cursor: pointer; z-index: 10;
-      display: flex; align-items: center; justify-content: center;
-      transition: 0.3s;
-    }
+    .carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; background: rgba(255,255,255,0.1); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 1.5rem; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
     .carousel-arrow:hover { background: var(--brand-blue); border-color: var(--brand-blue); }
     .arrow-left { left: 0; }
     .arrow-right { right: 0; }
-    
-    /* Puntos del Carrusel */
-    .carousel-dots {
-      display: flex; justify-content: center; gap: 8px; margin-top: 30px;
-    }
+    .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 30px; }
     .c-dot { width: 10px; height: 10px; border-radius: 50%; background: #334155; cursor: pointer; transition: 0.3s; }
     .c-dot.active { background: var(--brand-blue); transform: scale(1.2); }
 
@@ -171,10 +114,13 @@
     .svc-content-mid h3 { font-size: 1.1rem; margin-bottom: 5px; color: var(--text-main-light); }
     .svc-content-mid span { color: var(--brand-blue); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; }
 
-    /* --- FLORAL AMPLIA --- */
+    /* --- FLORAL --- */
     .floral-section { 
       padding: 180px 0; position: relative; 
-      background: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000') center/cover fixed; 
+      /* Fíjate: Aquí llama al archivo local */
+      background: url('bg-flores.jpg') center/cover fixed no-repeat; 
+      /* Fallback si no hay imagen */
+      background-color: #2e1065; 
     }
     .floral-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0.2) 100%); }
     .floral-content-wide { position: relative; z-index: 2; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; color: white; }
@@ -184,7 +130,12 @@
     .floral-card { background: rgba(255, 255, 255, 0.95); color: #333; padding: 35px; border-radius: 20px; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
 
     /* --- CATERING --- */
-    .catering-section { padding: 120px 0; position: relative; background: url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2000') center/cover fixed; }
+    .catering-section { 
+      padding: 120px 0; position: relative; 
+      /* Archivo local */
+      background: url('bg-catering.jpg') center/cover fixed no-repeat; 
+      background-color: #1e1b4b;
+    }
     .catering-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
     .catering-content { position: relative; z-index: 2; text-align: center; color: white; }
 
@@ -194,17 +145,17 @@
     .gallery-item { height: 250px; border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; }
     .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
     .gallery-item:hover img { transform: scale(1.1); }
-    
-    /* --- PEDIDOS (ILUSTRADOS) --- */
-    .orders-section-illustrated { position: relative; background: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=2000') center/cover fixed; }
+
+    /* --- PEDIDOS --- */
+    .orders-section-illustrated { 
+      position: relative; 
+      /* Archivo local */
+      background: url('bg-pedidos.jpg') center/cover fixed no-repeat; 
+      background-color: #f8fafc;
+    }
     .white-overlay { position: absolute; inset: 0; background: rgba(255, 255, 255, 0.85); }
     .orders-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; position: relative; z-index: 2; }
-    .order-box-img {
-      background: var(--bg-dark); color: white; border-radius: 20px;
-      box-shadow: 0 25px 40px -10px rgba(0, 0, 0, 0.25);
-      overflow: hidden; display: flex; flex-direction: column;
-      border: 1px solid rgba(0,0,0,0.1);
-    }
+    .order-box-img { background: var(--bg-dark); color: white; border-radius: 20px; box-shadow: 0 25px 40px -10px rgba(0, 0, 0, 0.25); overflow: hidden; display: flex; flex-direction: column; border: 1px solid rgba(0,0,0,0.1); }
     .card-header-img { height: 140px; width: 100%; object-fit: cover; border-bottom: 4px solid; }
     .card-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
     .modern-select, .modern-input { width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 10px; border: 1px solid #334155; background: #1e293b; color: white; font-family: 'Inter', sans-serif; }
@@ -214,44 +165,23 @@
     .footer-main { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; margin-bottom: 60px; }
     .footer-slogan { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: white; margin-bottom: 20px; line-height: 1.3; }
 
-    /* --- FLOTANTE WHATSAPP (SIEMPRE VISIBLE) --- */
-    .float-wa { 
-      position: fixed; 
-      top: 50%; 
-      right: 0; 
-      transform: translateY(-50%); 
-      background: #25d366; 
-      color: white; 
-      padding: 15px 15px 15px 18px; 
-      border-top-left-radius: 50px; 
-      border-bottom-left-radius: 50px; 
-      z-index: 2000; 
-      box-shadow: -5px 5px 20px rgba(0,0,0,0.3); 
-      cursor: pointer;
-      display: flex; /* Siempre visible */
-      transition: 0.3s;
-    }
+    /* FLOTANTE WHATSAPP */
+    .float-wa { position: fixed; top: 50%; right: 0; transform: translateY(-50%); background: #25d366; color: white; padding: 15px 15px 15px 18px; border-top-left-radius: 50px; border-bottom-left-radius: 50px; z-index: 2000; box-shadow: -5px 5px 20px rgba(0,0,0,0.3); cursor: pointer; display: flex; transition: 0.3s; }
     .float-wa:hover { padding-right: 20px; }
 
     /* RESPONSIVE */
-    @media(min-width: 768px) {
-      .product-card { flex: 0 0 calc(50% - 15px); } /* 2 por slide */
-    }
-    @media(min-width: 1024px) {
-      .product-card { flex: 0 0 calc(33.333% - 20px); } /* 3 por slide */
-    }
+    @media(min-width: 768px) { .product-card { flex: 0 0 calc(50% - 15px); } }
+    @media(min-width: 1024px) { .product-card { flex: 0 0 calc(33.333% - 20px); } }
     @media(max-width: 1024px) {
       .orders-grid, .about-grid, .floral-content-wide, .nav-flex { grid-template-columns: 1fr; flex-direction: column; }
-      /* En móvil el menú cambia */
-      .nav-links { display: none; width: 100%; text-align: center; margin: 15px 0; flex-direction: column; } 
+      .nav-links { display: none; width: 100%; text-align: center; margin: 15px 0; flex-direction: column; }
       .nav-links.active { display: flex; }
       .brand-logo { margin-right: 0; margin-bottom: 10px; }
       .slide-content h2 { font-size: 3rem; }
       .floral-inspiration { display: none; }
       .carousel-arrow { width: 35px; height: 35px; font-size: 1rem; }
-      /* Burger menu simplificado */
       .burger { display: block; cursor: pointer; font-size: 1.5rem; color: white; position: absolute; right: 20px; top: 20px; }
-      .header-btn { display: none; } /* Ocultar botón cotizar en header movil para espacio */
+      .header-btn { display: none; }
     }
     .burger { display: none; }
   </style>
@@ -265,9 +195,7 @@
         <span>📞 +507 6364-7927</span>
       </div>
       <div class="social-icons">
-        <a href="https://instagram.com" target="_blank">
-          Instagram ↗
-        </a>
+        <a href="https://instagram.com" target="_blank">Instagram ↗</a>
       </div>
     </div>
   </div>
@@ -275,14 +203,12 @@
   <header>
     <div class="container nav-flex">
       <div class="burger" onclick="toggleMenu()">☰</div>
-      
       <div class="brand-logo">
         <div class="brand-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
         </div>
         Gift&More.
       </div>
-
       <nav class="nav-links" id="navLinks">
         <a href="#inicio">Inicio</a>
         <a href="#tienda">Tienda</a>
@@ -291,14 +217,13 @@
         <a href="#galeria">Galería</a>
         <a href="#pedidos">Pedidos</a>
       </nav>
-
       <a href="#pedidos" class="btn btn-primary header-btn">Cotizar</a>
     </div>
   </header>
 
   <section id="inicio" class="hero-slider">
     <div class="slide active">
-      <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=2000" class="slide-bg">
+      <img src="slide-regalos.jpg" class="slide-bg">
       <div class="slide-content">
         <h2>Personalizando<br>Recuerdos</h2>
         <p>Convertimos tus ideas en regalos y eventos únicos.</p>
@@ -309,7 +234,7 @@
       </div>
     </div>
     <div class="slide">
-      <img src="https://images.unsplash.com/photo-1530103862676-de3c9a59af38?q=80&w=2000" class="slide-bg">
+      <img src="slide-eventos.jpg" class="slide-bg">
       <div class="slide-content">
         <h2>Celebrando<br>Momentos</h2>
         <p>Expertos en decoración de fiestas y catering.</p>
@@ -317,7 +242,7 @@
       </div>
     </div>
     <div class="slide">
-      <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2000" class="slide-bg">
+      <img src="slide-corp.jpg" class="slide-bg">
       <div class="slide-content">
         <h2>Soluciones<br>Corporativas</h2>
         <p>Impulsa tu marca con merchandising de calidad.</p>
@@ -334,7 +259,7 @@
   <section class="section-padding about-section">
     <div class="container about-grid">
       <div class="video-frame">
-        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=800" style="width:100%; height:100%; object-fit:cover;">
+        <img src="video-poster.jpg" style="width:100%; height:100%; object-fit:cover;">
       </div>
       <div class="about-text">
         <span style="color:var(--brand-blue); font-weight:700; letter-spacing:1px;">NUESTRA HISTORIA</span>
@@ -358,33 +283,32 @@
         
         <div class="carousel-track" id="track">
           <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1577909363842-990e44e2e288?w=500" class="p-img">
+            <img src="prod-pareja.jpg" class="p-img">
             <div class="p-info"><h3>Kit Pareja</h3><span class="p-price">$25.00</span><button class="btn btn-primary" style="width:100%" onclick="buy('Kit Pareja')">Comprar</button></div>
           </div>
           <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=500" class="p-img">
+            <img src="prod-termo.jpg" class="p-img">
             <div class="p-info"><h3>Termo 30oz</h3><span class="p-price">$18.00</span><button class="btn btn-primary" style="width:100%" onclick="buy('Termo 30oz')">Comprar</button></div>
           </div>
           <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1616606103915-dea7be788566?w=500" class="p-img">
+            <img src="prod-agenda.jpg" class="p-img">
             <div class="p-info"><h3>Agenda 2026</h3><span class="p-price">$12.00</span><button class="btn btn-primary" style="width:100%" onclick="buy('Agenda')">Comprar</button></div>
           </div>
           <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1574628286127-d0d525cc3657?w=500" class="p-img">
+            <img src="prod-fiesta.jpg" class="p-img">
             <div class="p-info"><h3>Kit Fiesta</h3><span class="p-price">$45.00</span><button class="btn btn-primary" style="width:100%" onclick="buy('Kit Fiesta')">Comprar</button></div>
           </div>
           <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500" class="p-img">
+            <img src="prod-taza.jpg" class="p-img">
             <div class="p-info"><h3>Taza Navideña</h3><span class="p-price">$15.00</span><button class="btn btn-primary" style="width:100%" onclick="buy('Taza Navidad')">Comprar</button></div>
           </div>
           <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1520310860-244bb6882209?w=500" class="p-img">
+            <img src="prod-joyero.jpg" class="p-img">
             <div class="p-info"><h3>Caja Regalo</h3><span class="p-price">$30.00</span><button class="btn btn-primary" style="width:100%" onclick="buy('Caja Regalo')">Comprar</button></div>
           </div>
         </div>
         
-        <div class="carousel-dots" id="carouselDots">
-          </div>
+        <div class="carousel-dots" id="carouselDots"></div>
       </div>
     </div>
   </section>
@@ -396,24 +320,24 @@
         <p style="color:var(--text-muted)">Explora nuestra lista completa de servicios a medida</p>
       </div>
       <div class="svc-grid-mid">
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Camisetas</h3><span>Sublimación / DTF</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Tazas</h3><span>Cerámica Premium</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Thermos</h3><span>Grabado Láser</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Uniformes</h3><span>Deportivos</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1597484662317-9bd7bdda2907?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Bolsas</h3><span>Ecológicas</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Gorras</h3><span>Bordado 3D</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Agendas</h3><span>Corporativas</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1530103862676-de3c9a59af38?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Globos</h3><span>Personalizados</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Recordatorios</h3><span>Eventos</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1562690868-60bbe762460d?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Rosas</h3><span>Floristería</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Desayunos</h3><span>Sorpresa</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1620138546344-7b2c38516edf?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Llaveros</h3><span>Resina</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1617103996702-96ff29b1c467?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Placas</h3><span>Metal / Acrílico</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Toppers</h3><span>Cumpleaños</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1506784365847-bbad939e9335?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Calendarios</h3><span>2026</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Libros</h3><span>Para Niños</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1574628286127-d0d525cc3657?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Deco Globos</h3><span>Eventos</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
-        <div class="svc-card-mid"><img src="https://images.unsplash.com/photo-1561043433-aaf687c4cf04?w=300" class="svc-img-mid"><div class="svc-content-mid"><h3>Catering</h3><span>Carrito & Staff</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-camisetas.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Camisetas</h3><span>Sublimación</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-tazas.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Tazas</h3><span>Cerámica</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-thermos.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Thermos</h3><span>Láser</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-uniformes.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Uniformes</h3><span>Deportivos</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-bolsas.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Bolsas</h3><span>Ecológicas</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-gorras.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Gorras</h3><span>Bordado</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-agendas.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Agendas</h3><span>Corp</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-globos.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Globos</h3><span>Personalizados</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-recordatorios.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Recordatorios</h3><span>Eventos</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-rosas.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Rosas</h3><span>Arreglos</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-desayunos.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Desayunos</h3><span>Sorpresa</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-llaveros.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Llaveros</h3><span>Resina</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-placas.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Placas</h3><span>Auto</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-toppers.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Toppers</h3><span>Cumpleaños</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-calendarios.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Calendarios</h3><span>2026</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-libros.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Libros</h3><span>Para Niños</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-deco-globos.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Deco Globos</h3><span>Eventos</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
+        <div class="svc-card-mid"><img src="svc-catering.jpg" class="svc-img-mid"><div class="svc-content-mid"><h3>Catering</h3><span>Carrito</span><button class="btn btn-primary btn-sm" onclick="scrollToOrders()">Cotizar</button></div></div>
       </div>
     </div>
   </section>
@@ -424,11 +348,11 @@
       <div>
         <span style="font-family:'Playfair Display'; color:var(--brand-pink); font-size:1.5rem;">El Jardín de Gift&More</span>
         <h2 style="font-size:3.5rem; margin:10px 0 20px;">Arreglos que Emocionan</h2>
-        <p style="font-size:1.2rem; margin-bottom:30px;">Expresa tus sentimientos con diseños florales exclusivos para Bodas, Cumpleaños y Aniversarios.</p>
+        <p style="font-size:1.2rem; margin-bottom:30px;">Expresa tus sentimientos con diseños florales exclusivos.</p>
         <div class="floral-inspiration">
-          <img src="https://images.unsplash.com/photo-1527652025590-0347e5069253?w=400" class="floral-thumb">
-          <img src="https://images.unsplash.com/photo-1584589167171-541ce45f1eea?w=400" class="floral-thumb">
-          <img src="https://images.unsplash.com/photo-1596436427270-7b1151c3da68?w=400" class="floral-thumb">
+          <img src="insp-boda.jpg" class="floral-thumb">
+          <img src="insp-cumple.jpg" class="floral-thumb">
+          <img src="insp-detalle.jpg" class="floral-thumb">
         </div>
       </div>
       <div class="floral-card">
@@ -446,7 +370,7 @@
             <option value="Caja de Rosas">Caja de Rosas</option>
             <option value="Arreglo Mixto">Arreglo Mixto</option>
           </select>
-          <textarea id="f-mensaje" rows="2" placeholder="Mensaje para tarjeta..." class="modern-input" style="background:#fff; color:#333; border:1px solid #ddd;"></textarea>
+          <textarea id="f-mensaje" rows="2" placeholder="Mensaje..." class="modern-input" style="background:#fff; color:#333; border:1px solid #ddd;"></textarea>
           <button type="submit" class="btn btn-floral" style="width:100%;">Cotizar Flores 🌹</button>
         </form>
       </div>
@@ -459,33 +383,32 @@
       <span style="color:var(--brand-gold); font-weight:700; letter-spacing:2px;">BANQUETES</span>
       <h2 style="font-size:3.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Catering & Staff</h2>
       <p style="font-size:1.2rem; max-width:700px; margin:0 auto 30px; text-shadow: 0 2px 5px rgba(0,0,0,0.5);">
-        Nos encargamos del sabor y el servicio. Carritos de snacks, barra de bebidas y el mejor equipo de azafatas para tu evento.
+        Nos encargamos del sabor y el servicio. Carritos de snacks, barra de bebidas y el mejor equipo de azafatas.
       </p>
       <a href="#pedidos" class="btn btn-gold">Ver Menú</a>
     </div>
   </section>
   
   <section id="galeria" class="gallery-section">
-  <div class="container">
-    <div class="section-head">
-      <h2>Galería de Trabajos</h2>
-      <p>Un vistazo a nuestras creaciones recientes</p>
+    <div class="container">
+      <div class="section-head">
+        <h2 style="color:var(--text-main-light)">Galería de Trabajos</h2>
+        <p style="color:var(--text-muted)">Un vistazo a nuestras creaciones recientes</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="gal-sueter.jpg"></div>
+        <div class="gallery-item"><img src="gal-copas.jpg"></div>
+        <div class="gallery-item"><img src="gal-mascotas.jpg"></div>
+        <div class="gallery-item"><img src="gal-tazas.jpg"></div>
+        <div class="gallery-item"><img src="gal-joyas.jpg"></div>
+        <div class="gallery-item"><img src="gal-corp.jpg"></div>
+        <div class="gallery-item"><img src="gal-gorras.jpg"></div>
+        <div class="gallery-item"><img src="gal-flores.jpg"></div>
+        <div class="gallery-item"><img src="gal-placas.jpg"></div>
+        <div class="gallery-item"><img src="gal-catering.jpg"></div>
+      </div>
     </div>
-
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="img/galeria/galeria-regalo-1.jpg" alt="Regalos personalizados"></div>
-      <div class="gallery-item"><img src="img/galeria/galeria-evento-1.jpg" alt="Eventos especiales"></div>
-      <div class="gallery-item"><img src="img/galeria/galeria-floral-1.jpg" alt="Arreglos florales"></div>
-      <div class="gallery-item"><img src="img/galeria/galeria-corporativo-1.jpg" alt="Regalos corporativos"></div>
-      <div class="gallery-item"><img src="img/galeria/galeria-decoracion-1.jpg" alt="Decoración de eventos"></div>
-      <div class="gallery-item"><img src="img/galeria/galeria-catering-1.jpg" alt="Servicio de catering"></div>
-      <div class="gallery-item"><img src="img/galeria/galeria-personalizados-1.jpg" alt="Productos personalizados"></div>
-      <div class="gallery-item"><img src="img/galeria/galeria-fiestas-1.jpg" alt="Fiestas y celebraciones"></div>
-      <div class="gallery-item"><img src="img/galeria/galeria-detalles-1.jpg" alt="Detalles artesanales"></div>
-      <div class="gallery-item"><img src="img/galeria/galeria-branding-1.jpg" alt="Branding corporativo"></div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <section id="pedidos" class="section-padding orders-section-illustrated">
     <div class="white-overlay"></div>
@@ -498,7 +421,7 @@
       <div class="orders-grid">
         
         <div class="order-box-img">
-          <img src="https://images.unsplash.com/photo-1507646227500-4d389b0012be?w=600" class="card-header-img" style="border-color:var(--brand-pink);">
+          <img src="head-flores.jpg" class="card-header-img" style="border-color:var(--brand-pink);">
           <div class="card-content">
             <h3 style="color:var(--brand-pink); font-size:1.4rem; margin-bottom:10px;">Flores & Decor</h3>
             <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:20px;">Bodas, cumpleaños y regalos.</p>
@@ -507,7 +430,7 @@
         </div>
 
         <div class="order-box-img">
-          <img src="https://images.unsplash.com/photo-1563968743333-044cef800494?w=600" class="card-header-img" style="border-color:var(--brand-blue);">
+          <img src="head-taller.jpg" class="card-header-img" style="border-color:var(--brand-blue);">
           <div class="card-content">
             <h3 style="color:var(--brand-blue); font-size:1.4rem; margin-bottom:10px;">Taller & Print</h3>
             <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:20px;">Impresión y promocionales.</p>
@@ -518,7 +441,7 @@
         </div>
 
         <div class="order-box-img">
-          <img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?w=600" class="card-header-img" style="border-color:var(--brand-gold);">
+          <img src="head-catering.jpg" class="card-header-img" style="border-color:var(--brand-gold);">
           <div class="card-content">
             <h3 style="color:var(--brand-gold); font-size:1.4rem; margin-bottom:10px;">Catering & Staff</h3>
             <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:20px;">Comida, bebida y protocolo.</p>
